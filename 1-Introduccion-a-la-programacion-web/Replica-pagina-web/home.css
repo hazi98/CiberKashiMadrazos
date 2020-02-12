@@ -1,0 +1,149 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  display: block;
+  border-bottom: 5px solid orange;
+  -webkit-box-shadow: 0px 9px 19px 2px rgba(0,0,0,0.5); 
+  box-shadow: 0px 9px 19px 2px rgba(0,0,0,0.3);
+}
+
+a,
+i,
+.dropbtn {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.topnav-right {
+    float: right;
+  }
+
+.dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.home {
+  background-color: orange;
+}
+
+.documentation:hover {
+  background-color: purple;
+}
+
+.downloads:hover {
+    background-color: green;
+}
+
+.demo:hover {
+    background-color: grey;
+}
+
+.tracker:hover {
+    background-color: darkblue;
+}
+
+.development:hover {
+    background-color: darkblue;
+}
+
+.translation:hover {
+    background-color: red;
+}
+
+.moodlenet:hover {
+    background-color: orangered;
+}
+
+.search:hover {
+    background-color: orange;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.logo{
+    width: 200px;
+    margin: 2em;
+}
+
+.login {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.align-right{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.link{
+  color:blue;
+}
+
+.main-banner{
+  background-color: orange;
+  background-image: url(FG-banner2-1680px.png);
+  width: 100%;
+  height: 450px;
+}
+
+.banner-text{
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+.banner-button{
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid white;
+}
+
+.banner-bottom{
+  position: static;
+  bottom: 0px;
+}
+
+.bottom-button{
+  background-color: rgba(0,0,0,0.5);
+  border: 0;
+}

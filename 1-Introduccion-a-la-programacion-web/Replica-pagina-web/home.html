@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moodle Open-source learning</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <body>
+        <nav>
+            <div class="topnav">
+                <div class="topnav-right">
+                    <i class="material-icons home">home</i>
+                    <a class="documentation">DOCUMENTATION</a>
+                    <a class="downloads">DOWNLOADS</a>
+                    <a class="demo">DEMO</a>
+                    <a class="tracker">TRACKER</a>
+                    <a class="development">DEVELOPMENT</a>
+                    <a class="translation">TRANSLATION</a>
+                    <a class="moodlenet">MOODLENET</a>
+                    <i class="material-icons search">search</i>
+                </div>
+                
+            </div>
+        </nav>
+        <div class="login">
+            <img class="logo" src="https://moodle.org/theme/image.php/moodleorg/theme_moodleorg/1581040814/moodle_logo_small" >
+                <div class="align-right">
+                <select id="language" class="drop">
+                    <option  value="am" > አማርኛ ‎(am)‎</option>
+                        <option  value="af" >Afrikaans ‎(af)‎</option>
+                        <option  value="an" >Aragonés ‎(an)‎</option>
+                        <option  value="oc_es" >Aranés ‎(oc_es)‎</option>
+                        <option  value="ast" >Asturianu ‎(ast)‎</option>
+                        <option  value="az" >Azərbaycanca ‎(az)‎</option>
+                        <option  value="ms" >Bahasa Melayu ‎(ms)‎</option>
+                        <option  value="bm" >Bamanankan ‎(bm)‎</option>
+                        <option  value="bi" >Bislama ‎(bi)‎</option>
+                        <option  value="bs" >Bosanski ‎(bs)‎</option>
+                        <option  value="br" >Breizh ‎(br)‎</option>
+                        <option  value="ca" >Català ‎(ca)‎</option>
+                        <option  value="ca_valencia" >Català (Valencià) ‎(ca_valencia)‎</option>
+                        <option  value="cs" >Čeština ‎(cs)‎</option>
+                        <option  value="mis" >Crnogorski ‎(mis)‎</option>
+                        <option  value="cy" >Cymraeg ‎(cy)‎</option>
+                        <option  value="da" >Dansk ‎(da)‎</option>
+                        <option  value="se" >Davvisámegiella ‎(se)‎</option>
+                        <option  value="de_ch" >Deutsch - Schweiz ‎(de_ch)‎</option>
+                        <option  value="de" >Deutsch ‎(de)‎</option>
+                        <option  value="dsb" >Dolnoserbski ‎(dsb)‎</option>
+                        <option  value="mh" >Ebon ‎(mh)‎</option>
+                        <option  value="et" >eesti ‎(et)‎</option>
+                        <option  value="en_us" >English - United States ‎(en_us)‎</option>
+                        <option  value="en" selected>English ‎(en)‎</option>
+                        <option  value="es_co" >Español - Colombia ‎(es_co)‎</option>
+                        <option  value="es" >Español - Internacional ‎(es)‎</option>
+                        <option  value="es_mx" >Español - México ‎(es_mx)‎</option>
+                        <option  value="es_ve" >Español - Venezuela ‎(es_ve)‎</option>
+                        <option  value="eo" >Esperanto ‎(eo)‎</option>
+                        <option  value="eu" >Euskara ‎(eu)‎</option>
+                        <option  value="ee" >Èʋegbe ‎(ee)‎</option>
+                        <option  value="fil" >Filipino ‎(fil)‎</option>
+                        <option  value="sv_fi" >Finlandssvenska ‎(sv_fi)‎</option>
+                        <option  value="fo" >Føroyskt ‎(fo)‎</option>
+                        <option  value="fr_ca" >Français - Canada ‎(fr_ca)‎</option>
+                        <option  value="fr" >Français ‎(fr)‎</option>
+                        <option  value="ga" >Gaeilge ‎(ga)‎</option>
+                        <option  value="gd" >Gàidhlig ‎(gd)‎</option>
+                        <option  value="gl" >Galego ‎(gl)‎</option>
+                        <option  value="oc_gsc" >Gascon ‎(oc_gsc)‎</option>
+                        <option  value="ha" >Hausa ‎(ha)‎</option>
+                        <option  value="hr" >Hrvatski ‎(hr)‎</option>
+                        <option  value="haw" >ʻŌlelo Hawaiʻi ‎(haw)‎</option>
+                        <option  value="ig" >Igbo ‎(ig)‎</option>
+                        <option  value="id" >Indonesian ‎(id)‎</option>
+                        <option  value="zu" >isiZulu ‎(zu)‎</option>
+                        <option  value="is" >Íslenska ‎(is)‎</option>
+                        <option  value="it" >Italiano ‎(it)‎</option>
+                        <option  value="kl" >Kalaallisut ‎(kl)‎</option>
+                        <option  value="rw" >Kinyarwanda ‎(rw)‎</option>
+                        <option  value="sw" >Kiswahili ‎(sw)‎</option>
+                        <option  value="hat" >Kreyòl Ayisyen ‎(hat)‎</option>
+                        <option  value="kmr" >Kurmanji ‎(kmr)‎</option>
+                        <option  value="lo" >Laotian ‎(lo)‎</option>
+                        <option  value="la" >Latin ‎(la)‎</option>
+                        <option  value="lv" >Latviešu ‎(lv)‎</option>
+                        <option  value="oc_lnc" >Lengadocian ‎(oc_lnc)‎</option>
+                        <option  value="lb" >Lëtzebuergesch ‎(lb)‎</option>
+                        <option  value="lt" >Lietuvių ‎(lt)‎</option>
+                        <option  value="smj" >Lulesamisk ‎(smj)‎</option>
+                        <option  value="hu" >magyar ‎(hu)‎</option>
+                        <option  value="mg" >Malagasy ‎(mg)‎</option>
+                        <option  value="mi_tn" >Māori - Tainui ‎(mi_tn)‎</option>
+                        <option  value="mi_wwow" >Māori - Waikato ‎(mi_wwow)‎</option>
+                        <option  value="mi" >Māori (Te Reo) ‎(mi)‎</option>
+                        <option  value="mn_mong" >Mongolian ‎(mn_mong)‎</option>
+                        <option  value="nl" >Nederlands ‎(nl)‎</option>
+                        <option  value="no" >Norsk - bokmål ‎(no)‎</option>
+                        <option  value="nn" >Norsk - nynorsk ‎(nn)‎</option>
+                        <option  value="no_gr" >Norsk ‎(no_gr)‎</option>
+                        <option  value="uz" >O'zbekcha ‎(uz)‎</option>
+                        <option  value="pcm" >Pidgin ‎(pcm)‎</option>
+                        <option  value="pl" >Polski ‎(pl)‎</option>
+                        <option  value="pt_br" >Português - Brasil ‎(pt_br)‎</option>
+                        <option  value="pt" >Português - Portugal ‎(pt)‎</option>
+                        <option  value="ro" >Română ‎(ro)‎</option>
+                        <option  value="rm_surs" >Romansh Sursilvan ‎(rm_surs)‎</option>
+                        <option  value="sm" >Samoan ‎(sm)‎</option>
+                        <option  value="tn" >Setswana ‎(tn)‎</option>
+                        <option  value="sq" >Shqip ‎(sq)‎</option>
+                        <option  value="sk" >Slovenčina ‎(sk)‎</option>
+                        <option  value="sl" >Slovenščina ‎(sl)‎</option>
+                        <option  value="so" >Soomaali ‎(so)‎</option>
+                        <option  value="sma" >Sørsamisk ‎(sma)‎</option>
+                        <option  value="sr_lt" >Srpski ‎(sr_lt)‎</option>
+                        <option  value="fi" >Suomi ‎(fi)‎</option>
+                        <option  value="sv" >Svenska ‎(sv)‎</option>
+                        <option  value="tl" >Tagalog ‎(tl)‎</option>
+                        <option  value="ta" >Tamil ‎(ta)‎</option>
+                        <option  value="kab" >Taqbaylit ‎(kab)‎</option>
+                        <option  value="th" >Thai ‎(th)‎</option>
+                        <option  value="to" >Tongan ‎(to)‎</option>
+                        <option  value="tr" >Türkçe ‎(tr)‎</option>
+                        <option  value="tk" >Turkmen ‎(tk)‎</option>
+                        <option  value="ug_lt" >Uyghur - latin ‎(ug_lt)‎</option>
+                        <option  value="fj" >VakaViti ‎(fj)‎</option>
+                        <option  value="ca_valencia_racv" >Valencià_RACV ‎(ca_valencia_racv)‎</option>
+                        <option  value="vi" >Vietnamese ‎(vi)‎</option>
+                        <option  value="wo" >Wolof ‎(wo)‎</option>
+                        <option  value="el" >Ελληνικά ‎(el)‎</option>
+                        <option  value="ba" >Башҡорт теле ‎(ba)‎</option>
+                        <option  value="be" >Беларуская ‎(be)‎</option>
+                        <option  value="bg" >Български ‎(bg)‎</option>
+                        <option  value="ky" >Кыргызча ‎(ky)‎</option>
+                        <option  value="kk" >Қазақша ‎(kk)‎</option>
+                        <option  value="mk" >Македонски ‎(mk)‎</option>
+                        <option  value="mn" >Монгол ‎(mn)‎</option>
+                        <option  value="ru" >Русский ‎(ru)‎</option>
+                        <option  value="sr_cr_bo" >Српски ‎(sr_cr_bo)‎</option>
+                        <option  value="sr_cr" >Српски ‎(sr_cr)‎</option>
+                        <option  value="sr" >Српски ‎(sr)‎</option>
+                        <option  value="tt" >татар теле ‎(tt)‎</option>
+                        <option  value="tg" >Тоҷикӣ ‎(tg)‎</option>
+                        <option  value="uk" >Українська ‎(uk)‎</option>
+                        <option  value="ka" >ქართული ‎(ka)‎</option>
+                        <option  value="hy" >Հայերեն ‎(hy)‎</option>
+                        <option  value="he" >עברית ‎(he)‎</option>
+                        <option  value="ug_ug" >ئۇيغۇرچە ‎(ug_ug)‎</option>
+                        <option  value="ur" >اردو ‎(ur)‎</option>
+                        <option  value="ps" >پښتو ‎(ps)‎</option>
+                        <option  value="ckb" >سۆرانی ‎(ckb)‎</option>
+                        <option  value="ar" >عربي ‎(ar)‎</option>
+                        <option  value="fa" >فارسی ‎(fa)‎</option>
+                        <option  value="dv" >ދިވެހި ‎(dv)‎</option>
+                        <option  value="zgh" >ⵜⴰⵎⴰⵣⵉⵖⵜ ‎(zgh)‎</option>
+                        <option  value="ti" >ትግርኛ ‎(ti)‎</option>
+                        <option  value="ne" >नेपाली ‎(ne)‎</option>
+                        <option  value="mr" >मराठी ‎(mr)‎</option>
+                        <option  value="hi" >हिंदी ‎(hi)‎</option>
+                        <option  value="bn" >বাংলা ‎(bn)‎</option>
+                        <option  value="pan" >ਪੰਜਾਬੀ ‎(pan)‎</option>
+                        <option  value="gu" >ગુજરાતી ‎(gu)‎</option>
+                        <option  value="or" >ଓଡ଼ିଆ ‎(or)‎</option>
+                        <option  value="ta_lk" >தமிழ் ‎(ta_lk)‎</option>
+                        <option  value="te" >తెలుగు  ‎(te)‎</option>
+                        <option  value="kn" >ಕನ್ನಡ ‎(kn)‎</option>
+                        <option  value="ml" >മലയാളം ‎(ml)‎</option>
+                        <option  value="si" >සිංහල ‎(si)‎</option>
+                        <option  value="xct" >བོད་ཡིག ‎(xct)‎</option>
+                        <option  value="dz" >རྫོང་ཁ ‎(dz)‎</option>
+                        <option  value="my" >ဗမာစာ ‎(my)‎</option>
+                        <option  value="km" >ខ្មែរ ‎(km)‎</option>
+                        <option  value="ko" >한국어 ‎(ko)‎</option>
+                        <option  value="ja" >日本語 ‎(ja)‎</option>
+                        <option  value="zh_tw" >正體中文 ‎(zh_tw)‎</option>
+                        <option  value="zh_cn" >简体中文 ‎(zh_cn)‎</option>
+                </select>
+                    <span class="login">You are not logged in. </span>
+                    <span><a href="/" class="link">Login</a></span>
+                </div>
+        </div>
+        <div class="main-banner">
+            <h2 class="banner-text" style="padding: 50px 0 0 100px;">Community driven, globally supported.</h2>
+            <p class="banner-text" style="padding: 0 0 0 100px;">Welcome to the Moodle community and discover the value of an open, collaborative effort by one of the largest open-source teams in the world.</p>
+            <button class="banner-button banner-text" style="margin: 0 0 0 100px; padding: 7px 10px 7px 10px;">COMMUNITY FORUMS</button>
+            <div class="banner-bottom">
+                <button class="bottom-button">
+                    <i class="material-icons">person</i>
+                </button>
+            </div>
+        </div>
+    </body>
+</html>
