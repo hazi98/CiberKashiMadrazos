@@ -1,194 +1,398 @@
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Moodle Open-source learning</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/93c1ac68d7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="home.css">
-    <body>
-        <nav>
-            <div class="topnav">
-                <div class="topnav-right">
-                    <i class="material-icons home">home</i>
-                    <a class="documentation">DOCUMENTATION</a>
-                    <a class="downloads">DOWNLOADS</a>
-                    <a class="demo">DEMO</a>
-                    <a class="tracker">TRACKER</a>
-                    <a class="development">DEVELOPMENT</a>
-                    <a class="translation">TRANSLATION</a>
-                    <a class="moodlenet">MOODLENET</a>
-                    <i class="material-icons search">search</i>
-                </div>
-                
-            </div>
-        </nav>
-        <div class="login">
-            <img class="logo" src="https://moodle.org/theme/image.php/moodleorg/theme_moodleorg/1581040814/moodle_logo_small" >
-                <div class="align-right">
-                <select id="language" class="drop">
-                    <option  value="am" > አማርኛ ‎(am)‎</option>
-                        <option  value="af" >Afrikaans ‎(af)‎</option>
-                        <option  value="an" >Aragonés ‎(an)‎</option>
-                        <option  value="oc_es" >Aranés ‎(oc_es)‎</option>
-                        <option  value="ast" >Asturianu ‎(ast)‎</option>
-                        <option  value="az" >Azərbaycanca ‎(az)‎</option>
-                        <option  value="ms" >Bahasa Melayu ‎(ms)‎</option>
-                        <option  value="bm" >Bamanankan ‎(bm)‎</option>
-                        <option  value="bi" >Bislama ‎(bi)‎</option>
-                        <option  value="bs" >Bosanski ‎(bs)‎</option>
-                        <option  value="br" >Breizh ‎(br)‎</option>
-                        <option  value="ca" >Català ‎(ca)‎</option>
-                        <option  value="ca_valencia" >Català (Valencià) ‎(ca_valencia)‎</option>
-                        <option  value="cs" >Čeština ‎(cs)‎</option>
-                        <option  value="mis" >Crnogorski ‎(mis)‎</option>
-                        <option  value="cy" >Cymraeg ‎(cy)‎</option>
-                        <option  value="da" >Dansk ‎(da)‎</option>
-                        <option  value="se" >Davvisámegiella ‎(se)‎</option>
-                        <option  value="de_ch" >Deutsch - Schweiz ‎(de_ch)‎</option>
-                        <option  value="de" >Deutsch ‎(de)‎</option>
-                        <option  value="dsb" >Dolnoserbski ‎(dsb)‎</option>
-                        <option  value="mh" >Ebon ‎(mh)‎</option>
-                        <option  value="et" >eesti ‎(et)‎</option>
-                        <option  value="en_us" >English - United States ‎(en_us)‎</option>
-                        <option  value="en" selected>English ‎(en)‎</option>
-                        <option  value="es_co" >Español - Colombia ‎(es_co)‎</option>
-                        <option  value="es" >Español - Internacional ‎(es)‎</option>
-                        <option  value="es_mx" >Español - México ‎(es_mx)‎</option>
-                        <option  value="es_ve" >Español - Venezuela ‎(es_ve)‎</option>
-                        <option  value="eo" >Esperanto ‎(eo)‎</option>
-                        <option  value="eu" >Euskara ‎(eu)‎</option>
-                        <option  value="ee" >Èʋegbe ‎(ee)‎</option>
-                        <option  value="fil" >Filipino ‎(fil)‎</option>
-                        <option  value="sv_fi" >Finlandssvenska ‎(sv_fi)‎</option>
-                        <option  value="fo" >Føroyskt ‎(fo)‎</option>
-                        <option  value="fr_ca" >Français - Canada ‎(fr_ca)‎</option>
-                        <option  value="fr" >Français ‎(fr)‎</option>
-                        <option  value="ga" >Gaeilge ‎(ga)‎</option>
-                        <option  value="gd" >Gàidhlig ‎(gd)‎</option>
-                        <option  value="gl" >Galego ‎(gl)‎</option>
-                        <option  value="oc_gsc" >Gascon ‎(oc_gsc)‎</option>
-                        <option  value="ha" >Hausa ‎(ha)‎</option>
-                        <option  value="hr" >Hrvatski ‎(hr)‎</option>
-                        <option  value="haw" >ʻŌlelo Hawaiʻi ‎(haw)‎</option>
-                        <option  value="ig" >Igbo ‎(ig)‎</option>
-                        <option  value="id" >Indonesian ‎(id)‎</option>
-                        <option  value="zu" >isiZulu ‎(zu)‎</option>
-                        <option  value="is" >Íslenska ‎(is)‎</option>
-                        <option  value="it" >Italiano ‎(it)‎</option>
-                        <option  value="kl" >Kalaallisut ‎(kl)‎</option>
-                        <option  value="rw" >Kinyarwanda ‎(rw)‎</option>
-                        <option  value="sw" >Kiswahili ‎(sw)‎</option>
-                        <option  value="hat" >Kreyòl Ayisyen ‎(hat)‎</option>
-                        <option  value="kmr" >Kurmanji ‎(kmr)‎</option>
-                        <option  value="lo" >Laotian ‎(lo)‎</option>
-                        <option  value="la" >Latin ‎(la)‎</option>
-                        <option  value="lv" >Latviešu ‎(lv)‎</option>
-                        <option  value="oc_lnc" >Lengadocian ‎(oc_lnc)‎</option>
-                        <option  value="lb" >Lëtzebuergesch ‎(lb)‎</option>
-                        <option  value="lt" >Lietuvių ‎(lt)‎</option>
-                        <option  value="smj" >Lulesamisk ‎(smj)‎</option>
-                        <option  value="hu" >magyar ‎(hu)‎</option>
-                        <option  value="mg" >Malagasy ‎(mg)‎</option>
-                        <option  value="mi_tn" >Māori - Tainui ‎(mi_tn)‎</option>
-                        <option  value="mi_wwow" >Māori - Waikato ‎(mi_wwow)‎</option>
-                        <option  value="mi" >Māori (Te Reo) ‎(mi)‎</option>
-                        <option  value="mn_mong" >Mongolian ‎(mn_mong)‎</option>
-                        <option  value="nl" >Nederlands ‎(nl)‎</option>
-                        <option  value="no" >Norsk - bokmål ‎(no)‎</option>
-                        <option  value="nn" >Norsk - nynorsk ‎(nn)‎</option>
-                        <option  value="no_gr" >Norsk ‎(no_gr)‎</option>
-                        <option  value="uz" >O'zbekcha ‎(uz)‎</option>
-                        <option  value="pcm" >Pidgin ‎(pcm)‎</option>
-                        <option  value="pl" >Polski ‎(pl)‎</option>
-                        <option  value="pt_br" >Português - Brasil ‎(pt_br)‎</option>
-                        <option  value="pt" >Português - Portugal ‎(pt)‎</option>
-                        <option  value="ro" >Română ‎(ro)‎</option>
-                        <option  value="rm_surs" >Romansh Sursilvan ‎(rm_surs)‎</option>
-                        <option  value="sm" >Samoan ‎(sm)‎</option>
-                        <option  value="tn" >Setswana ‎(tn)‎</option>
-                        <option  value="sq" >Shqip ‎(sq)‎</option>
-                        <option  value="sk" >Slovenčina ‎(sk)‎</option>
-                        <option  value="sl" >Slovenščina ‎(sl)‎</option>
-                        <option  value="so" >Soomaali ‎(so)‎</option>
-                        <option  value="sma" >Sørsamisk ‎(sma)‎</option>
-                        <option  value="sr_lt" >Srpski ‎(sr_lt)‎</option>
-                        <option  value="fi" >Suomi ‎(fi)‎</option>
-                        <option  value="sv" >Svenska ‎(sv)‎</option>
-                        <option  value="tl" >Tagalog ‎(tl)‎</option>
-                        <option  value="ta" >Tamil ‎(ta)‎</option>
-                        <option  value="kab" >Taqbaylit ‎(kab)‎</option>
-                        <option  value="th" >Thai ‎(th)‎</option>
-                        <option  value="to" >Tongan ‎(to)‎</option>
-                        <option  value="tr" >Türkçe ‎(tr)‎</option>
-                        <option  value="tk" >Turkmen ‎(tk)‎</option>
-                        <option  value="ug_lt" >Uyghur - latin ‎(ug_lt)‎</option>
-                        <option  value="fj" >VakaViti ‎(fj)‎</option>
-                        <option  value="ca_valencia_racv" >Valencià_RACV ‎(ca_valencia_racv)‎</option>
-                        <option  value="vi" >Vietnamese ‎(vi)‎</option>
-                        <option  value="wo" >Wolof ‎(wo)‎</option>
-                        <option  value="el" >Ελληνικά ‎(el)‎</option>
-                        <option  value="ba" >Башҡорт теле ‎(ba)‎</option>
-                        <option  value="be" >Беларуская ‎(be)‎</option>
-                        <option  value="bg" >Български ‎(bg)‎</option>
-                        <option  value="ky" >Кыргызча ‎(ky)‎</option>
-                        <option  value="kk" >Қазақша ‎(kk)‎</option>
-                        <option  value="mk" >Македонски ‎(mk)‎</option>
-                        <option  value="mn" >Монгол ‎(mn)‎</option>
-                        <option  value="ru" >Русский ‎(ru)‎</option>
-                        <option  value="sr_cr_bo" >Српски ‎(sr_cr_bo)‎</option>
-                        <option  value="sr_cr" >Српски ‎(sr_cr)‎</option>
-                        <option  value="sr" >Српски ‎(sr)‎</option>
-                        <option  value="tt" >татар теле ‎(tt)‎</option>
-                        <option  value="tg" >Тоҷикӣ ‎(tg)‎</option>
-                        <option  value="uk" >Українська ‎(uk)‎</option>
-                        <option  value="ka" >ქართული ‎(ka)‎</option>
-                        <option  value="hy" >Հայերեն ‎(hy)‎</option>
-                        <option  value="he" >עברית ‎(he)‎</option>
-                        <option  value="ug_ug" >ئۇيغۇرچە ‎(ug_ug)‎</option>
-                        <option  value="ur" >اردو ‎(ur)‎</option>
-                        <option  value="ps" >پښتو ‎(ps)‎</option>
-                        <option  value="ckb" >سۆرانی ‎(ckb)‎</option>
-                        <option  value="ar" >عربي ‎(ar)‎</option>
-                        <option  value="fa" >فارسی ‎(fa)‎</option>
-                        <option  value="dv" >ދިވެހި ‎(dv)‎</option>
-                        <option  value="zgh" >ⵜⴰⵎⴰⵣⵉⵖⵜ ‎(zgh)‎</option>
-                        <option  value="ti" >ትግርኛ ‎(ti)‎</option>
-                        <option  value="ne" >नेपाली ‎(ne)‎</option>
-                        <option  value="mr" >मराठी ‎(mr)‎</option>
-                        <option  value="hi" >हिंदी ‎(hi)‎</option>
-                        <option  value="bn" >বাংলা ‎(bn)‎</option>
-                        <option  value="pan" >ਪੰਜਾਬੀ ‎(pan)‎</option>
-                        <option  value="gu" >ગુજરાતી ‎(gu)‎</option>
-                        <option  value="or" >ଓଡ଼ିଆ ‎(or)‎</option>
-                        <option  value="ta_lk" >தமிழ் ‎(ta_lk)‎</option>
-                        <option  value="te" >తెలుగు  ‎(te)‎</option>
-                        <option  value="kn" >ಕನ್ನಡ ‎(kn)‎</option>
-                        <option  value="ml" >മലയാളം ‎(ml)‎</option>
-                        <option  value="si" >සිංහල ‎(si)‎</option>
-                        <option  value="xct" >བོད་ཡིག ‎(xct)‎</option>
-                        <option  value="dz" >རྫོང་ཁ ‎(dz)‎</option>
-                        <option  value="my" >ဗမာစာ ‎(my)‎</option>
-                        <option  value="km" >ខ្មែរ ‎(km)‎</option>
-                        <option  value="ko" >한국어 ‎(ko)‎</option>
-                        <option  value="ja" >日本語 ‎(ja)‎</option>
-                        <option  value="zh_tw" >正體中文 ‎(zh_tw)‎</option>
-                        <option  value="zh_cn" >简体中文 ‎(zh_cn)‎</option>
-                </select>
-                    <span class="login">You are not logged in. </span>
-                    <span><a href="/" class="link">Login</a></span>
-                </div>
-        </div>
-        <div class="main-banner">
-            <h2 class="banner-text" style="padding: 50px 0 0 100px;">Community driven, globally supported.</h2>
-            <p class="banner-text" style="padding: 0 0 0 100px;">Welcome to the Moodle community and discover the value of an open, collaborative effort by one of the largest open-source teams in the world.</p>
-            <button class="banner-button banner-text" style="margin: 0 0 0 100px; padding: 7px 10px 7px 10px;">COMMUNITY FORUMS</button>
-            <div class="banner-bottom">
-                <button class="bottom-button">
-                    <i class="material-icons">person</i>
-                </button>
+</head>
+
+<body>
+    <nav>
+        <div class="topnav">
+            <div class="topnav-right" id="myTopnav">
+                <i class="fas fa-home home" style="font-size: 20px;"></i>
+                <a class="documentation">DOCUMENTATION</a>
+                <a class="downloads">DOWNLOADS</a>
+                <a class="demo">DEMO</a>
+                <a class="tracker">TRACKER</a>
+                <a class="development">DEVELOPMENT</a>
+                <a class="translation">TRANSLATION</a>
+                <a class="moodlenet">MOODLENET</a>
+                <i class="fas fa-search search" style="font-size: 15px;"></i>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
         </div>
-    </body>
+    </nav>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav-right") {
+                x.className = "topnav responsive";
+            } else {
+                x.className = "topnav-right";
+            }
+        }
+    </script>
+
+    <div class="login flex-grid">
+        <img class="logo"
+            src="https://moodle.org/theme/image.php/moodleorg/theme_moodleorg/1581040814/moodle_logo_small">
+        <div class="align-right align-bottom ">
+            <select id="language" class="drop py-5 col">
+                <option value="am"> አማርኛ ‎(am)‎</option>
+                <option value="af">Afrikaans ‎(af)‎</option>
+                <option value="an">Aragonés ‎(an)‎</option>
+                <option value="oc_es">Aranés ‎(oc_es)‎</option>
+                <option value="ast">Asturianu ‎(ast)‎</option>
+                <option value="az">Azərbaycanca ‎(az)‎</option>
+                <option value="ms">Bahasa Melayu ‎(ms)‎</option>
+                <option value="bm">Bamanankan ‎(bm)‎</option>
+                <option value="bi">Bislama ‎(bi)‎</option>
+                <option value="bs">Bosanski ‎(bs)‎</option>
+                <option value="br">Breizh ‎(br)‎</option>
+                <option value="ca">Català ‎(ca)‎</option>
+                <option value="ca_valencia">Català (Valencià) ‎(ca_valencia)‎</option>
+                <option value="cs">Čeština ‎(cs)‎</option>
+                <option value="mis">Crnogorski ‎(mis)‎</option>
+                <option value="cy">Cymraeg ‎(cy)‎</option>
+                <option value="da">Dansk ‎(da)‎</option>
+                <option value="se">Davvisámegiella ‎(se)‎</option>
+                <option value="de_ch">Deutsch - Schweiz ‎(de_ch)‎</option>
+                <option value="de">Deutsch ‎(de)‎</option>
+                <option value="dsb">Dolnoserbski ‎(dsb)‎</option>
+                <option value="mh">Ebon ‎(mh)‎</option>
+                <option value="et">eesti ‎(et)‎</option>
+                <option value="en_us">English - United States ‎(en_us)‎</option>
+                <option value="en" selected>English ‎(en)‎</option>
+                <option value="es_co">Español - Colombia ‎(es_co)‎</option>
+                <option value="es">Español - Internacional ‎(es)‎</option>
+                <option value="es_mx">Español - México ‎(es_mx)‎</option>
+                <option value="es_ve">Español - Venezuela ‎(es_ve)‎</option>
+                <option value="eo">Esperanto ‎(eo)‎</option>
+                <option value="eu">Euskara ‎(eu)‎</option>
+                <option value="ee">Èʋegbe ‎(ee)‎</option>
+                <option value="fil">Filipino ‎(fil)‎</option>
+                <option value="sv_fi">Finlandssvenska ‎(sv_fi)‎</option>
+                <option value="fo">Føroyskt ‎(fo)‎</option>
+                <option value="fr_ca">Français - Canada ‎(fr_ca)‎</option>
+                <option value="fr">Français ‎(fr)‎</option>
+                <option value="ga">Gaeilge ‎(ga)‎</option>
+                <option value="gd">Gàidhlig ‎(gd)‎</option>
+                <option value="gl">Galego ‎(gl)‎</option>
+                <option value="oc_gsc">Gascon ‎(oc_gsc)‎</option>
+                <option value="ha">Hausa ‎(ha)‎</option>
+                <option value="hr">Hrvatski ‎(hr)‎</option>
+                <option value="haw">ʻŌlelo Hawaiʻi ‎(haw)‎</option>
+                <option value="ig">Igbo ‎(ig)‎</option>
+                <option value="id">Indonesian ‎(id)‎</option>
+                <option value="zu">isiZulu ‎(zu)‎</option>
+                <option value="is">Íslenska ‎(is)‎</option>
+                <option value="it">Italiano ‎(it)‎</option>
+                <option value="kl">Kalaallisut ‎(kl)‎</option>
+                <option value="rw">Kinyarwanda ‎(rw)‎</option>
+                <option value="sw">Kiswahili ‎(sw)‎</option>
+                <option value="hat">Kreyòl Ayisyen ‎(hat)‎</option>
+                <option value="kmr">Kurmanji ‎(kmr)‎</option>
+                <option value="lo">Laotian ‎(lo)‎</option>
+                <option value="la">Latin ‎(la)‎</option>
+                <option value="lv">Latviešu ‎(lv)‎</option>
+                <option value="oc_lnc">Lengadocian ‎(oc_lnc)‎</option>
+                <option value="lb">Lëtzebuergesch ‎(lb)‎</option>
+                <option value="lt">Lietuvių ‎(lt)‎</option>
+                <option value="smj">Lulesamisk ‎(smj)‎</option>
+                <option value="hu">magyar ‎(hu)‎</option>
+                <option value="mg">Malagasy ‎(mg)‎</option>
+                <option value="mi_tn">Māori - Tainui ‎(mi_tn)‎</option>
+                <option value="mi_wwow">Māori - Waikato ‎(mi_wwow)‎</option>
+                <option value="mi">Māori (Te Reo) ‎(mi)‎</option>
+                <option value="mn_mong">Mongolian ‎(mn_mong)‎</option>
+                <option value="nl">Nederlands ‎(nl)‎</option>
+                <option value="no">Norsk - bokmål ‎(no)‎</option>
+                <option value="nn">Norsk - nynorsk ‎(nn)‎</option>
+                <option value="no_gr">Norsk ‎(no_gr)‎</option>
+                <option value="uz">O'zbekcha ‎(uz)‎</option>
+                <option value="pcm">Pidgin ‎(pcm)‎</option>
+                <option value="pl">Polski ‎(pl)‎</option>
+                <option value="pt_br">Português - Brasil ‎(pt_br)‎</option>
+                <option value="pt">Português - Portugal ‎(pt)‎</option>
+                <option value="ro">Română ‎(ro)‎</option>
+                <option value="rm_surs">Romansh Sursilvan ‎(rm_surs)‎</option>
+                <option value="sm">Samoan ‎(sm)‎</option>
+                <option value="tn">Setswana ‎(tn)‎</option>
+                <option value="sq">Shqip ‎(sq)‎</option>
+                <option value="sk">Slovenčina ‎(sk)‎</option>
+                <option value="sl">Slovenščina ‎(sl)‎</option>
+                <option value="so">Soomaali ‎(so)‎</option>
+                <option value="sma">Sørsamisk ‎(sma)‎</option>
+                <option value="sr_lt">Srpski ‎(sr_lt)‎</option>
+                <option value="fi">Suomi ‎(fi)‎</option>
+                <option value="sv">Svenska ‎(sv)‎</option>
+                <option value="tl">Tagalog ‎(tl)‎</option>
+                <option value="ta">Tamil ‎(ta)‎</option>
+                <option value="kab">Taqbaylit ‎(kab)‎</option>
+                <option value="th">Thai ‎(th)‎</option>
+                <option value="to">Tongan ‎(to)‎</option>
+                <option value="tr">Türkçe ‎(tr)‎</option>
+                <option value="tk">Turkmen ‎(tk)‎</option>
+                <option value="ug_lt">Uyghur - latin ‎(ug_lt)‎</option>
+                <option value="fj">VakaViti ‎(fj)‎</option>
+                <option value="ca_valencia_racv">Valencià_RACV ‎(ca_valencia_racv)‎</option>
+                <option value="vi">Vietnamese ‎(vi)‎</option>
+                <option value="wo">Wolof ‎(wo)‎</option>
+                <option value="el">Ελληνικά ‎(el)‎</option>
+                <option value="ba">Башҡорт теле ‎(ba)‎</option>
+                <option value="be">Беларуская ‎(be)‎</option>
+                <option value="bg">Български ‎(bg)‎</option>
+                <option value="ky">Кыргызча ‎(ky)‎</option>
+                <option value="kk">Қазақша ‎(kk)‎</option>
+                <option value="mk">Македонски ‎(mk)‎</option>
+                <option value="mn">Монгол ‎(mn)‎</option>
+                <option value="ru">Русский ‎(ru)‎</option>
+                <option value="sr_cr_bo">Српски ‎(sr_cr_bo)‎</option>
+                <option value="sr_cr">Српски ‎(sr_cr)‎</option>
+                <option value="sr">Српски ‎(sr)‎</option>
+                <option value="tt">татар теле ‎(tt)‎</option>
+                <option value="tg">Тоҷикӣ ‎(tg)‎</option>
+                <option value="uk">Українська ‎(uk)‎</option>
+                <option value="ka">ქართული ‎(ka)‎</option>
+                <option value="hy">Հայերեն ‎(hy)‎</option>
+                <option value="he">עברית ‎(he)‎</option>
+                <option value="ug_ug">ئۇيغۇرچە ‎(ug_ug)‎</option>
+                <option value="ur">اردو ‎(ur)‎</option>
+                <option value="ps">پښتو ‎(ps)‎</option>
+                <option value="ckb">سۆرانی ‎(ckb)‎</option>
+                <option value="ar">عربي ‎(ar)‎</option>
+                <option value="fa">فارسی ‎(fa)‎</option>
+                <option value="dv">ދިވެހި ‎(dv)‎</option>
+                <option value="zgh">ⵜⴰⵎⴰⵣⵉⵖⵜ ‎(zgh)‎</option>
+                <option value="ti">ትግርኛ ‎(ti)‎</option>
+                <option value="ne">नेपाली ‎(ne)‎</option>
+                <option value="mr">मराठी ‎(mr)‎</option>
+                <option value="hi">हिंदी ‎(hi)‎</option>
+                <option value="bn">বাংলা ‎(bn)‎</option>
+                <option value="pan">ਪੰਜਾਬੀ ‎(pan)‎</option>
+                <option value="gu">ગુજરાતી ‎(gu)‎</option>
+                <option value="or">ଓଡ଼ିଆ ‎(or)‎</option>
+                <option value="ta_lk">தமிழ் ‎(ta_lk)‎</option>
+                <option value="te">తెలుగు ‎(te)‎</option>
+                <option value="kn">ಕನ್ನಡ ‎(kn)‎</option>
+                <option value="ml">മലയാളം ‎(ml)‎</option>
+                <option value="si">සිංහල ‎(si)‎</option>
+                <option value="xct">བོད་ཡིག ‎(xct)‎</option>
+                <option value="dz">རྫོང་ཁ ‎(dz)‎</option>
+                <option value="my">ဗမာစာ ‎(my)‎</option>
+                <option value="km">ខ្មែរ ‎(km)‎</option>
+                <option value="ko">한국어 ‎(ko)‎</option>
+                <option value="ja">日本語 ‎(ja)‎</option>
+                <option value="zh_tw">正體中文 ‎(zh_tw)‎</option>
+                <option value="zh_cn">简体中文 ‎(zh_cn)‎</option>
+            </select>
+            <span class="py-5 col">You are not logged in. </span>
+            <span><a href="/" class="link py-5 col">Login</a></span>
+        </div>
+    </div>
+    <div class="main-banner">
+        <h2 class="banner-text" style="margin-left: 8.3%; padding-top: 50px;">Community driven, globally supported.</h2>
+        <p class="banner-text" style="margin-left: 8.3%;">Welcome to the Moodle community and discover the value of
+            an open, collaborative effort by one of the largest open-source teams in the world.</p>
+        <button class="banner-button banner-text" style="margin-left: 8.3%; padding: 7px 10px 7px 10px;">COMMUNITY
+            FORUMS</button>
+        <div class="banner-bottom">
+            <button class="bottom-button" style="border-right: 1px solid white;">
+                <i class="fas fa-users" style="font-size: 30px;"></i>
+                <p class="banner-text">Supported by a global community</p>
+            </button>
+            <button class="bottom-button" style="border-right: 1px solid white;">
+                <i class="fab fa-osi" style="font-size: 30px;"></i>
+                <p class="banner-text">Robust open-source learning platform</p>
+            </button>
+            <button class="bottom-button" style="border-right: 1px solid white;">
+                <i class="fas fa-globe-americas" style="font-size: 30px;"></i>
+                <p class="banner-text">Powering learning environments worldwide</p>
+            </button>
+            <button class="bottom-button">
+                <i class="far fa-newspaper" style="font-size: 30px;"></i>
+                <p class="banner-text">Moodle stories from around the world</p>
+            </button>
+        </div>
+    </div>
+    <div class="announcements flex-grid">
+        <div class="col py-20">
+            <div class="an-align an-header">
+                <h3 class="an-header-text" style="display: inline-block;">Announcements</h3>
+                <i class="fas fa-rss" style="color: gray;"></i>
+            </div>
+            <div class="an-align-right">
+                <a href="#" class="link">See all announcements</a>
+                <i class="fas fa-chevron-right" style="color: gray;"></i>
+            </div>
+        </div>
+        <div class="an-entry py-20">
+            <div class="col">
+                <a href="" class="an-text">Our Learn Moodle 3.8 Basics MOOC has begun!</a>
+            </div>
+            <p class="muted col">Tuesday, 14 January 2020</p>
+        </div>
+        <div class="an-entry py-20">
+            <div class="col">
+                <a href="" class="an-text">Moodle 3.8.1 and other minors have been released</a>
+            </div>
+            <p class="muted col">Thursday, 9 January 2020</p>
+        </div>
+        <div class="an-entry py-20">
+            <div class="col">
+                <a href="" class="an-text">Join us in January for Learn Moodle 3.8 Basics</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="cards flex-grid">
+        <div class="card col">
+            <h4 class="card-title">The Moodle project</h4>
+            <p>Learn more about the Moodle project and our open, collaborative partnerships.</p>
+            <a href="" class="link">About Moodle</a>
+            <a href="" class="link">Statistics</a>
+            <a href="" class="link">Moodle HQ</a>
+            <a href="" class="link">Moodle Partners</a>
+            <a href="" class="link">Developers</a>
+        </div>
+        <div class="card col">
+            <h4 class="card-title">Setting up</h4>
+            <p>On your own</p>
+            <a href="" class="link">Free download</a>
+            <a href="" class="link">Installation</a>
+            <a href="" class="link">Plugins</a>
+            <a href="" class="link">Community support</a>
+            <p>Via a Moodle Partner</p>
+            <a href="" class="link">Hosting</a>
+            <a href="" class="link">Commercial support</a>
+        </div>
+        <div class="card col">
+            <h4 class="card-title">Teaching with Moodle</h4>
+            <p>Explore Moodle's wide range of features and available resources.</p>
+            <a href="" class="link">Documentation</a>
+            <a href="" class="link">Courses and content</a>
+            <a href="" class="link">Books</a>
+        </div>
+        <div class="card col">
+            <h4 class="card-title">Support and community forums</h4>
+            <p>Get support and share ideas, in your own language.</p>
+            <a href="" class="link">Moodle in English</a>
+            <a href="" class="link">Moodle en Español</a>
+            <a href="" class="link">All communities</a>
+        </div>
+        <div class="card col">
+            <h4 class="card-title">Help shape Moodle's future</h4>
+            <p>Find out what's next and help make a difference.</p>
+            <a href="" class="link">Roadmap</a>
+            <a href="" class="link">Developer discussions</a>
+            <a href="" class="link">Moodle research</a>
+            <a href="" class="link">Crowdfunding projects</a>
+        </div>
+        <div class="card col">
+            <h4 class="card-title">Keep up-to-date</h4>
+            <p>Latest Moodle news, updates and insight across the world.</p>
+            <a href="" class="link">Announcements</a>
+            <a href="" class="link">Security announcements</a>
+            <a href="" class="link">Moodle buzz</a>
+            <a href="" class="link">Social media</a>
+        </div>
+    </div>
+    <div class="resources flex-grid">
+        <div class="py-20 col">
+            <div class="an-align an-header">
+                <h3 class="an-header-text" style="display: inline-block;">Useful posts</h3>
+                <i class="fas fa-rss" style="color: gray;"></i>
+            </div>
+            <div class="res-content flex-grid-simple">
+                <div class="entry">
+                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/35"></a>
+                    <a href="" class="an-text">Re: Web services is not available (it doesn't exist or might be
+                        disabled)</a>
+                    <p class="muted">Juan Leyva - Friday, 6 February 2015</p>
+                </div>
+                <div class="entry">
+                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/35"></a>
+                    <a href="" class="an-text">Re: Question: BigBlueButton Recording on MoodleCloud</a>
+                    <p class="muted">Mathieu Petit-Clair - Wednesday, 12 February 2020</p>
+                </div>
+                <div class="entry">
+                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/35"></a>
+                    <a href="" class="an-text">Re: blocks now appears below the course topics , not at right!</a>
+                    <p class="muted">AL Rachels - Tuesday, 11 February 2020</p>
+                </div>
+                <div class="entry">
+                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/35"></a>
+                    <a href="" class="an-text">Re: Can I disable the inline view for marking assignments?</a>
+                    <p class="muted">Marc Couture - Friday, 15 February 2019</p>
+                </div>
+            </div>
+        </div>
+        <div class="py-20 col">
+            <div class="an-align an-header">
+                <h3 class="an-header-text" style="display: inline-block;">Useful posts</h3>
+                <i class="fas fa-rss" style="color: gray;"></i>
+            </div>
+            <div class="res-content flex-grid-simple">
+                <div class="entry">
+                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/35"></a>
+                    <a href="" class="an-text">Re: Web services is not available (it doesn't exist or might be
+                        disabled)</a>
+                    <p class="muted">Juan Leyva - Friday, 6 February 2015</p>
+                </div>
+                <div class="entry">
+                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/35"></a>
+                    <a href="" class="an-text">Re: Question: BigBlueButton Recording on MoodleCloud</a>
+                    <p class="muted">Mathieu Petit-Clair - Wednesday, 12 February 2020</p>
+                </div>
+                <div class="entry">
+                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/35"></a>
+                    <a href="" class="an-text">Re: blocks now appears below the course topics , not at right!</a>
+                    <p class="muted">AL Rachels - Tuesday, 11 February 2020</p>
+                </div>
+                <div class="entry">
+                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/35"></a>
+                    <a href="" class="an-text">Re: Can I disable the inline view for marking assignments?</a>
+                    <p class="muted">Marc Couture - Friday, 15 February 2019</p>
+                </div>
+            </div>
+        </div>
+        <div class="py-20 col">
+            <div class="an-align an-header">
+                <h3 class="an-header-text" style="display: inline-block;">Useful posts</h3>
+                <i class="fas fa-rss" style="color: gray;"></i>
+            </div>
+            <div class="res-content flex-grid-simple">
+                <div class="entry">
+                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/35"></a>
+                    <a href="" class="an-text">Re: Web services is not available (it doesn't exist or might be
+                        disabled)</a>
+                    <p class="muted">Juan Leyva - Friday, 6 February 2015</p>
+                </div>
+                <div class="entry">
+                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/35"></a>
+                    <a href="" class="an-text">Re: Question: BigBlueButton Recording on MoodleCloud</a>
+                    <p class="muted">Mathieu Petit-Clair - Wednesday, 12 February 2020</p>
+                </div>
+                <div class="entry">
+                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/35"></a>
+                    <a href="" class="an-text">Re: blocks now appears below the course topics , not at right!</a>
+                    <p class="muted">AL Rachels - Tuesday, 11 February 2020</p>
+                </div>
+                <div class="entry">
+                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/35"></a>
+                    <a href="" class="an-text">Re: Can I disable the inline view for marking assignments?</a>
+                    <p class="muted">Marc Couture - Friday, 15 February 2019</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
