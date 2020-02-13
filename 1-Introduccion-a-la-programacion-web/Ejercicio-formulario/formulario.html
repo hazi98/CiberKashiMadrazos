@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Envíos</title>
+</head>
+<body>
+    <H1>BIENVENIDO A ENVIOS.COM</H1><style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 3%;
+        }
+    </style>
+    <h3>Integrantes:</h3>
+    <p>Sergio Iván Alcázar Becerra</p>
+    <p>Diana Alicia Cadena Hernández</p>
+    <p>Yoltic Jassiel García Guzmán</p>
+    <form action="">
+        <fieldset>
+            <legend><h2>Información personal</h2></legend>
+            <h3>Nombre:</h3>
+            <input type="text" name="first-name" >
+            <h3>Apellido paterno</h3>
+            <input type="text" name="last-name1">
+            <h3>Apellido materno</h3>
+            <input type="text" name="last-name2">
+            <h3>Edad</h3>
+            <input type="number" name="age">
+            <h3>Género</h3>
+            <input type="radio" name="gender" value="Hombre" id="">Hombre
+            <input type="radio" name="gender" value="Mujer" id="">Mujer
+            <input type="radio" name="gender" value="Otro" id="">Otro
+            <h3>Correo electrónico</h3>
+            <input type="email" name="email" id="">
+            <h3>Número telefónico</h3>
+            <input type="tel" name="" id="">
+        </fieldset>
+        <fieldset>
+            <legend><h2>Datos de envío</h2></legend>
+            <h3>Calle y numero</h3>
+            <input type="text" name="address1" id="">
+            <h3>Municipio / Alcaldia</h3>
+            <input type="text" name="municipality" id="">
+            <h3>Ciudad / Estado</h3>
+            <input type="text" name="city-state" id="">
+            <h3>Código postal</h3>
+            <input type="text" name="zip-code" id="">
+
+        </fieldset>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
