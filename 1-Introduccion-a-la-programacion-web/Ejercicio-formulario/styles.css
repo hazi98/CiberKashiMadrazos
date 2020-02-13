@@ -1,0 +1,48 @@
+
+.encabezado{
+    border: 2px solid white;
+  outline: #e0dd15 solid 7px;
+  margin: auto;  
+  padding: 20px;
+  text-align: center;
+  background-color:#dd9b5e;
+  border-radius: .25rem;
+  
+}
+.i{
+    shape-margin: 50%;
+}
+.int{
+    border: #fcfcfa solid 5px ;
+    background-color: hsl(46, 83%, 48%);
+    flex-wrap: wrap;
+}
+.Info_personal{
+    background-color: orange;
+}
+html{
+    background-color: #ce6c11;  
+}
+.per1, .env1{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.per2{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.Info_envio{
+    background-color: orange;
+}
+
+.env2{
+    align-items: center;
+    float: left;
+    flex-wrap: wrap;
+}
