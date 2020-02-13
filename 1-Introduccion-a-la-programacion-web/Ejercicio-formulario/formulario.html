@@ -45,9 +45,24 @@
             <input type="text" name="city-state" id="">
             <h3>Código postal</h3>
             <input type="text" name="zip-code" id="">
+            <h3>Número de unidades</h3>
+            <select name="Units" id="">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <h3>Forma de envío</h3>
+            <input type="radio" name="shipping" value="Premium" id="">Envío premium (Entrega el mismo día)
+            <input type="radio" name="shipping" value="VIP" id="">Envío VIP (Entrega de 2 a 4 días hábiles)
+            <input type="radio" name="shipping" value="General" id="" checked>Envío general (Entregs de 3 a 5 semanas)
+
+            <input type="checkbox" name="envelope" value="regalo" id="">Envolver para regalo
 
         </fieldset>
         <button type="submit">Enviar</button>
+        <button>Cancelar</button>
     </form>
 </body>
 </html>
