@@ -2,52 +2,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Formulario Envíos</title>
 </head>
 <body>
-    <H1>BIENVENIDO A ENVIOS.COM</H1><style>
+    <H1 class="encabezado">BIENVENIDO A ENVIOS.COM</H1><style>
         body{
             font-family: Arial, Helvetica, sans-serif;
             padding: 3%;
         }
     </style>
-    <h3>Integrantes:</h3>
-    <p>Sergio Iván Alcázar Becerra</p>
-    <p>Diana Alicia Cadena Hernández</p>
-    <p>Yoltic Jassiel García Guzmán</p>
+    <h3 class="i">Integrantes:</h3>
+    <div class="int">
+        <ul>
+            <li>Sergio Iván Alcázar Becerra</p>
+            <li>Diana Alicia Cadena Hernández</p>
+            <li>Yoltic Jassiel García Guzmán</p>
+        </ul>
+        
+    </div>
+    
     <form action="">
-        <fieldset>
+        <fieldset class="Info_personal">
             <legend><h2>Información personal</h2></legend>
-            <h3>Nombre:</h3>
-            <input type="text" name="first-name" >
-            <h3>Apellido paterno</h3>
-            <input type="text" name="last-name1">
-            <h3>Apellido materno</h3>
-            <input type="text" name="last-name2">
-            <h3>Edad</h3>
-            <input type="number" name="age">
-            <h3>Género</h3>
-            <input type="radio" name="gender" value="Hombre" id="">Hombre
-            <input type="radio" name="gender" value="Mujer" id="">Mujer
-            <input type="radio" name="gender" value="Otro" id="">Otro
-            <h3>Correo electrónico</h3>
-            <input type="email" name="email" id="">
-            <h3>Número telefónico</h3>
-            <input type="tel" name="" id="">
+            <div class="per1">
+                <h3>Nombre:</h3>
+                <input type="text" name="first-name" >
+                <h3>Apellido paterno</h3>
+                <input type="text" name="last-name1">
+                <h3>Apellido materno</h3>
+                <input type="text" name="last-name2">
+            </div>
+            <div class="per2">
+                <h3>Edad</h3>
+                <input type="number" name="age">
+                <h3>Género</h3>
+                <input type="radio" name="gender" value="Hombre" id="" checked>Hombre
+                <input type="radio" name="gender" value="Mujer" id="">Mujer
+                <input type="radio" name="gender" value="Otro" id="">Otro
+                <h3>Correo electrónico</h3>
+                <input type="email" name="email" id="">
+                <h3>Número telefónico</h3>
+                <input type="tel" name="" id="">
+            </div>
+            
         </fieldset>
-        <fieldset>
+        <fieldset class="Info_envio">
             <legend><h2>Datos de envío</h2></legend>
-            <h3>Calle y numero</h3>
-            <input type="text" name="address1" id="">
-            <h3>Municipio / Alcaldia</h3>
-            <input type="text" name="municipality" id="">
-            <h3>Ciudad / Estado</h3>
-            <input type="text" name="city-state" id="">
-            <h3>Código postal</h3>
-            <input type="text" name="zip-code" id="">
-
+            <div class="env1">
+                <h3>Calle y numero</h3>
+                <input type="text" name="address1" id="">
+                <h3>Municipio / Alcaldia</h3>
+                <input type="text" name="municipality" id="">
+                <h3>Ciudad / Estado</h3>
+                <input type="text" name="city-state" id="">
+                <h3>Código postal</h3>
+                <input type="text" name="zip-code" id="">
+            </div>
+            <hr color="white">
+            <div class="env2">
+                <h3>Número de unidades</h3>
+                <select name="Units" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <h3>Forma de envío</h3>
+                <input type="radio" name="shipping" value="Premium" id="">Envío premium (Entrega el mismo día)
+                <input type="radio" name="shipping" value="VIP" id="">Envío VIP (Entrega de 2 a 4 días hábiles)
+                <input type="radio" name="shipping" value="General" id="" checked>Envío general (Entregs de 3 a 5 semanas)
+                <br/>
+                <input type="checkbox" name="envelope" value="regalo" id="">Envolver para regalo
+            </div>
+            
         </fieldset>
         <button type="submit">Enviar</button>
+        <button>Cancelar</button>
     </form>
 </body>
 </html>
