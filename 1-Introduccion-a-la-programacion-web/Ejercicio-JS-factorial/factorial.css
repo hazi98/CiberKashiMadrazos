@@ -1,0 +1,30 @@
+
+h1{
+    background: fixed;
+    text-align: center;
+}
+h3{
+    margin: 1em;
+}
+.input{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-style: dashed;
+    border-color: aqua;
+    
+    
+}
+button{
+    margin: 1em;
+}
+input .fact-input{
+    margin: 15px;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: plum;
+}

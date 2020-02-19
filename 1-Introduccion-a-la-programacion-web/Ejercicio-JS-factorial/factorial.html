@@ -1,0 +1,45 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="factorial.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Factorial de un número</h1>
+    <div class="input">
+      <h3>Número:</h3>
+      <input type="number" name="fact-input" id="fact-input" class="fact-input" />
+      <button onclick="factorialDeElemento()">Calcular</button>
+    </div>
+    <div>
+      <h3>El resultado es:</h3>
+      <p id="result"></p>
+    </div>
+    <script>
+      function factorialDeElemento() {
+        var numEntrada =  document.getElementById("fact-input");
+        console.log(numEntrada);
+        var contador = numEntrada;
+        var resultado = 0;
+        var buffer = 0;
+
+        for (let index = 0; index < numEntrada; index++) {
+          buffer = contador;
+          contador--;
+          if (contador != 0) {
+            resultado += buffer * contador;
+          }
+        }
+        console.log(resultado);
+        document.getElementById("result").innerHTML =
+        "El resultado es: " + resultado;
+      }
+      
+    </script>
+  </body>
+</html>
