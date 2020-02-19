@@ -13,33 +13,34 @@
     <h1>Factorial de un número</h1>
     <div class="input">
       <h3>Número:</h3>
-      <input type="number" name="fact-input" id="fact-input" class="fact-input" />
+      <input
+        type="number"
+        name="fact-input"
+        id="fact-input"
+        class="fact-input"
+      />
       <button onclick="factorialDeElemento()">Calcular</button>
     </div>
     <div>
-      <h3>El resultado es:</h3>
+      <h3>Resultado:</h3>
       <p id="result"></p>
     </div>
     <script>
       function factorialDeElemento() {
-        var numEntrada =  document.getElementById("fact-input");
-        console.log(numEntrada);
-        var contador = numEntrada;
-        var resultado = 0;
-        var buffer = 0;
-
-        for (let index = 0; index < numEntrada; index++) {
-          buffer = contador;
-          contador--;
-          if (contador != 0) {
-            resultado += buffer * contador;
+        var numEntrada = document.getElementById("fact-input").value;
+        var resultado = numEntrada;
+        if (numEntrada === 0 || numEntrada === 1) {
+          resultado = 1;
+        } else {
+          for (var index = resultado - 1; index >= 1; index--) {
+            resultado *= index;
+            
           }
         }
-        console.log(resultado);
+
         document.getElementById("result").innerHTML =
-        "El resultado es: " + resultado;
+          "El resultado es: " + resultado;
       }
-      
     </script>
   </body>
 </html>
