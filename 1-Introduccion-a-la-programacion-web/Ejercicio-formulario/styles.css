@@ -1,48 +1,95 @@
-
-.encabezado{
-    border: 2px solid white;
-  outline: #e0dd15 solid 7px;
-  margin: auto;  
+html {
+  font-family: "Raleway", sans-serif;
+  padding: 2em;
+  background-color: #d8d8d8;
+}
+.encabezado {
+  border: 5px solid #ffffea;
+  margin: auto;
   padding: 20px;
   text-align: center;
-  background-color:#dd9b5e;
-  border-radius: .25rem;
-  
+  font-weight: 900;
+  background: linear-gradient(
+    to right,
+    #f12711,
+    #f5af19
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #f6f7eb;
+  border-radius: 5px;
 }
-.i{
-    shape-margin: 50%;
-}
-.int{
-    border: #fcfcfa solid 5px ;
-    background-color: hsl(46, 83%, 48%);
-    flex-wrap: wrap;
-}
-.Info_personal{
-    background-color: orange;
-}
-html{
-    background-color: #ce6c11;  
-}
-.per1, .env1{
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: space-between;
-    
-}
-.per2{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    
-}
-.Info_envio{
-    background-color: orange;
+.i {
+  shape-margin: 50%;
 }
 
-.env2{
-    align-items: center;
-    float: left;
-    flex-wrap: wrap;
+h2 {
+  color: #542344;
+  font-size: 24px;
+  background-color: #ffed66;
+  padding: 2px 10px 2px 10px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+.int {
+  border: 5px solid #ffffea;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+
+  background-color: #bfd1e5;
+  flex-wrap: wrap;
+}
+.Info_personal {
+  background-color: #00cecb;
+}
+
+.per1,
+.env1 {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+.per2 {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Info_envio {
+  background-color: #00cecb;
+}
+
+.env2 {
+  align-items: center;
+  float: left;
+  flex-wrap: wrap;
+}
+
+fieldset {
+  border: 5px solid #ffffea;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  margin: 7px;
+  padding: 10px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  border: unset;
+  border-radius: 5px;
+  background: linear-gradient(
+    to right,
+    #ff416c,
+    #ff4b2b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+button:hover {
+  background: linear-gradient(
+    to left,
+    #d13459,
+    #d83f24
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

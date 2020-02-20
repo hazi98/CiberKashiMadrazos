@@ -2,22 +2,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Formulario Envíos</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>       
+    $(document).ready(function(){
+        $("#Info_envio").hide();
+        $("#continue").click(function(){
+            $("#Info_envio").fadeIn();
+        });
+        $("#inte").click(function(){
+            $("#div1").fadeToggle();
+            $("#div2").fadeToggle("slow");
+            $("#div3").fadeToggle(3000);
+    }); 
+
+    </script>
+
 </head>
 <body>
-    <H1 class="encabezado">BIENVENIDO A ENVIOS.COM</H1><style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 3%;
-        }
-    </style>
+    
+    <H1 class="encabezado">BIENVENIDO A ENVIOS.COM</H1>
     <h3 class="i">Integrantes:</h3>
+    
+
     <div class="int">
+        <button id="inte">Integrantes</button>
         <ul>
-            <li>Sergio Iván Alcázar Becerra</p>
-            <li>Diana Alicia Cadena Hernández</p>
-            <li>Yoltic Jassiel García Guzmán</p>
+            <li id="div1">Sergio Iván Alcázar Becerra</p>
+            <li id="div2">Diana Alicia Cadena Hernández</p>
+            <li id="div3">Yoltic Jassiel García Guzmán</p>
         </ul>
         
     </div>
@@ -28,6 +44,7 @@
             <div class="per1">
                 <h3>Nombre:</h3>
                 <input type="text" name="first-name" >
+            
                 <h3>Apellido paterno</h3>
                 <input type="text" name="last-name1">
                 <h3>Apellido materno</h3>
@@ -44,20 +61,21 @@
                 <input type="email" name="email" id="">
                 <h3>Número telefónico</h3>
                 <input type="tel" name="" id="">
+                <button id="continue" type="button">Continue</button>
             </div>
             
         </fieldset>
-        <fieldset class="Info_envio">
+        <fieldset class="Info_envio" id="Info_envio">
             <legend><h2>Datos de envío</h2></legend>
             <div class="env1">
                 <h3>Calle y numero</h3>
-                <input type="text" name="address1" id="">
+                <input type="text" name="address1" id="i1">
                 <h3>Municipio / Alcaldia</h3>
-                <input type="text" name="municipality" id="">
+                <input type="text" name="municipality" id="i2">
                 <h3>Ciudad / Estado</h3>
-                <input type="text" name="city-state" id="">
+                <input type="text" name="city-state" id="i3">
                 <h3>Código postal</h3>
-                <input type="text" name="zip-code" id="">
+                <input type="text" name="zip-code" id="i4">
             </div>
             <hr color="white">
             <div class="env2">
