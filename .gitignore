@@ -1,7 +1,12 @@
- # Ignore VSCode settings
+# Ignore VSCode settings #
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+
+# Packages #
+*.7z
+*.rar
+*.zip
