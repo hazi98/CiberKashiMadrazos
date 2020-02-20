@@ -1,0 +1,66 @@
+html {
+  font-family: "Poppins", sans-serif;
+  background-color: #000022;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 900;
+  color: #dd7a39;
+}
+h3{
+  text-align: center;
+  color: #CC2936;
+}
+
+table {
+  background-color: #001242;
+  margin: auto;
+  padding: 10px;
+  border: 7px dotted #60D394;
+  border-radius: 25px;
+  width: auto;
+}
+
+tr {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  width: auto;
+}
+td {
+  margin: 10px;
+  width: 100%;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+#igual{
+  background-color: #CCB524;
+}
+
+#suma, #resta, #multiplicacion, #division, #reset{
+  background-color: #E63462;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  width: 2em;
+  height: 2em;
+  font-size: 2vw;
+  background-color: #cc2936;
+  color: #f6f4f3;
+  border: unset;
+  border-radius: 1rem;
+}
+
+#resultado{
+  background-color: #60D394;
+  height: 2em;
+  font-size: 2vw;
+  color: #502F4C;
+  padding: 1em;
+  justify-content: center;
+  border-radius: 1rem;
+  border: 5px solid #DD7A39;
+  text-align: end;
+}
