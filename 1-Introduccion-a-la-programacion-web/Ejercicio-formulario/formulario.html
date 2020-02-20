@@ -1,50 +1,55 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Formulario Envíos</title>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>       
-    $(document).ready(function(){
-        $("#Info_envio").hide();
-        $("#continue").click(function(){
-            $("#Info_envio").fadeIn();
+    <script>
+        $(document).ready(function () {
+            $(".Info_personal").fadeIn(1000);
+            $("#encabezado").click(function () {
+                $(".encabezado").animate({
+                    width: '-=350px',
+                });
+            });
+            $("#continue").click(function () {
+                $("#Info_envio").slideDown();
+                $(this).hide(400);
+            });
+            $("#integrantes").click(function () {
+                $("#lista-integrantes").fadeToggle();
+            });
+            $("button").hover(function () {
+                $(this).toggleClass("scale-up-center");
+            });
         });
-        $("#inte").click(function(){
-            $("#div1").fadeToggle();
-            $("#div2").fadeToggle("slow");
-            $("#div3").fadeToggle(3000);
-    }); 
-
     </script>
-
 </head>
-<body>
-    
-    <H1 class="encabezado">BIENVENIDO A ENVIOS.COM</H1>
-    <h3 class="i">Integrantes:</h3>
-    
 
+<body>
+    <div id="encabezado">
+        <h1 class="encabezado">BIENVENIDO A ENVIOS.COM</h1>
+    </div>
+    <h3 class="i">Integrantes:</h3>
     <div class="int">
-        <button id="inte">Integrantes</button>
-        <ul>
+        <button id="integrantes" class="btn-1c">Integrantes</button>
+        <ul id="lista-integrantes">
             <li id="div1">Sergio Iván Alcázar Becerra</p>
             <li id="div2">Diana Alicia Cadena Hernández</p>
             <li id="div3">Yoltic Jassiel García Guzmán</p>
         </ul>
-        
     </div>
-    
     <form action="">
         <fieldset class="Info_personal">
-            <legend><h2>Información personal</h2></legend>
+            <legend>
+                <h2>Información personal</h2>
+            </legend>
             <div class="per1">
                 <h3>Nombre:</h3>
-                <input type="text" name="first-name" >
-            
+                <input type="text" name="first-name">
+
                 <h3>Apellido paterno</h3>
                 <input type="text" name="last-name1">
                 <h3>Apellido materno</h3>
@@ -61,12 +66,14 @@
                 <input type="email" name="email" id="">
                 <h3>Número telefónico</h3>
                 <input type="tel" name="" id="">
-                <button id="continue" type="button">Continue</button>
+                <button id="continue" type="button" class="btn-1c">Continuar</button>
             </div>
-            
+
         </fieldset>
         <fieldset class="Info_envio" id="Info_envio">
-            <legend><h2>Datos de envío</h2></legend>
+            <legend>
+                <h2>Datos de envío</h2>
+            </legend>
             <div class="env1">
                 <h3>Calle y numero</h3>
                 <input type="text" name="address1" id="i1">
@@ -90,14 +97,18 @@
                 <h3>Forma de envío</h3>
                 <input type="radio" name="shipping" value="Premium" id="">Envío premium (Entrega el mismo día)
                 <input type="radio" name="shipping" value="VIP" id="">Envío VIP (Entrega de 2 a 4 días hábiles)
-                <input type="radio" name="shipping" value="General" id="" checked>Envío general (Entregs de 3 a 5 semanas)
-                <br/>
+                <input type="radio" name="shipping" value="General" id="" checked>Envío general (Entregs de 3 a 5
+                semanas)
+                <br />
                 <input type="checkbox" name="envelope" value="regalo" id="">Envolver para regalo
             </div>
-            
+
         </fieldset>
-        <button type="submit">Enviar</button>
-        <button>Cancelar</button>
+        <div style="margin: 10px;">
+            <button type="submit" class="btn-1c">Enviar</button>
+            <button class="btn-1c">Cancelar</button>
+        </div>
     </form>
 </body>
+
 </html>

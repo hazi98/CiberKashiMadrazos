@@ -3,20 +3,73 @@ html {
   padding: 2em;
   background-color: #d8d8d8;
 }
+
 .encabezado {
+  min-width: 20%;
   border: 5px solid #ffffea;
   margin: auto;
   padding: 20px;
   text-align: center;
   font-weight: 900;
-  background: linear-gradient(
-    to right,
-    #f12711,
-    #f5af19
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(98deg,
+      #f12711,
+      #f5af19);
+  background-size: 200% 200%;
   color: #f6f7eb;
   border-radius: 5px;
+  transition: box-shadow 0.3s ease-in-out;
+
+  -webkit-animation: AnimationName 6s ease infinite;
+  -moz-animation: AnimationName 6s ease infinite;
+  animation: AnimationName 6s ease infinite;
 }
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 18% 0%
+  }
+
+  50% {
+    background-position: 83% 100%
+  }
+
+  100% {
+    background-position: 18% 0%
+  }
+}
+
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 18% 0%
+  }
+
+  50% {
+    background-position: 83% 100%
+  }
+
+  100% {
+    background-position: 18% 0%
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 18% 0%
+  }
+
+  50% {
+    background-position: 83% 100%
+  }
+
+  100% {
+    background-position: 18% 0%
+  }
+}
+
+.encabezado:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
 .i {
   shape-margin: 50%;
 }
@@ -29,6 +82,7 @@ h2 {
   border-radius: 5px;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
 }
+
 .int {
   border: 5px solid #ffffea;
   border-radius: 5px;
@@ -37,8 +91,14 @@ h2 {
   background-color: #bfd1e5;
   flex-wrap: wrap;
 }
+
+#lista-integrantes {
+  display: none;
+}
+
 .Info_personal {
   background-color: #00cecb;
+  display: none;
 }
 
 .per1,
@@ -48,14 +108,17 @@ h2 {
   align-items: center;
   justify-content: space-between;
 }
+
 .per2 {
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .Info_envio {
   background-color: #00cecb;
+  display: none;
 }
 
 .env2 {
@@ -74,22 +137,77 @@ button {
   margin: 7px;
   padding: 10px;
   font-family: "Raleway", sans-serif;
+  display: inline-block;
   font-size: 16px;
   color: white;
   font-weight: bold;
   border: unset;
   border-radius: 5px;
-  background: linear-gradient(
-    to right,
-    #ff416c,
-    #ff4b2b
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right,
+      #ff416c,
+      #ff4b2b);
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-button:hover {
-  background: linear-gradient(
-    to left,
-    #d13459,
-    #d83f24
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+button:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+
+.scale-up-center {
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.w);
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+/* Button 1c */
+.btn-1c:after {
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #FF5F6D;
+  background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);
+  background: linear-gradient(to right, #FFC371, #FF5F6D);
+}
+
+.btn-1c:hover,
+.btn-1c:active {
+  color: #adfcc7;
+}
+
+.btn-1c:hover:after,
+.btn-1c:active:after {
+  width: 100%;
 }
