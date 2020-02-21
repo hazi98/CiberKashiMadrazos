@@ -5,7 +5,10 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Formulario Envíos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function () {
             $(".Info_personal").fadeIn(1000);
@@ -29,86 +32,138 @@
 </head>
 
 <body>
-    <div id="encabezado">
-        <h1 class="encabezado">BIENVENIDO A ENVIOS.COM</h1>
-    </div>
-    <h3 class="i">Integrantes:</h3>
-    <div class="int">
-        <button id="integrantes" class="btn-1c">Integrantes</button>
-        <ul id="lista-integrantes">
-            <li id="div1">Sergio Iván Alcázar Becerra</p>
-            <li id="div2">Diana Alicia Cadena Hernández</p>
-            <li id="div3">Yoltic Jassiel García Guzmán</p>
-        </ul>
-    </div>
-    <form action="">
-        <fieldset class="Info_personal">
-            <legend>
-                <h2>Información personal</h2>
-            </legend>
-            <div class="per1">
-                <h3>Nombre:</h3>
-                <input type="text" name="first-name">
+    <div class="container-fluid p-5">
 
-                <h3>Apellido paterno</h3>
-                <input type="text" name="last-name1">
-                <h3>Apellido materno</h3>
-                <input type="text" name="last-name2">
-            </div>
-            <div class="per2">
-                <h3>Edad</h3>
-                <input type="number" name="age">
-                <h3>Género</h3>
-                <input type="radio" name="gender" value="Hombre" id="" checked>Hombre
-                <input type="radio" name="gender" value="Mujer" id="">Mujer
-                <input type="radio" name="gender" value="Otro" id="">Otro
-                <h3>Correo electrónico</h3>
-                <input type="email" name="email" id="">
-                <h3>Número telefónico</h3>
-                <input type="tel" name="" id="">
-                <button id="continue" type="button" class="btn-1c">Continuar</button>
-            </div>
-
-        </fieldset>
-        <fieldset class="Info_envio" id="Info_envio">
-            <legend>
-                <h2>Datos de envío</h2>
-            </legend>
-            <div class="env1">
-                <h3>Calle y numero</h3>
-                <input type="text" name="address1" id="i1">
-                <h3>Municipio / Alcaldia</h3>
-                <input type="text" name="municipality" id="i2">
-                <h3>Ciudad / Estado</h3>
-                <input type="text" name="city-state" id="i3">
-                <h3>Código postal</h3>
-                <input type="text" name="zip-code" id="i4">
-            </div>
-            <hr color="white">
-            <div class="env2">
-                <h3>Número de unidades</h3>
-                <select name="Units" id="">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <h3>Forma de envío</h3>
-                <input type="radio" name="shipping" value="Premium" id="">Envío premium (Entrega el mismo día)
-                <input type="radio" name="shipping" value="VIP" id="">Envío VIP (Entrega de 2 a 4 días hábiles)
-                <input type="radio" name="shipping" value="General" id="" checked>Envío general (Entregs de 3 a 5
-                semanas)
-                <br />
-                <input type="checkbox" name="envelope" value="regalo" id="">Envolver para regalo
-            </div>
-
-        </fieldset>
-        <div style="margin: 10px;">
-            <button type="submit" class="btn-1c">Enviar</button>
-            <button class="btn-1c">Cancelar</button>
+        <div id="encabezado" class="row">
+            <h1 class="encabezado col-md">BIENVENIDO A ENVIOS.COM</h1>
         </div>
-    </form>
+
+
+        <h3 class="i row">Integrantes:</h3>
+        <div class="int row mt-3 p-2">
+            <button id="integrantes" class="btn btn-1c">Integrantes</button>
+            <ul id="lista-integrantes">
+                <li id="div1 col">Sergio Iván Alcázar Becerra</p>
+                <li id="div2 col">Diana Alicia Cadena Hernández</p>
+                <li id="div3 col">Yoltic Jassiel García Guzmán</p>
+            </ul>
+        </div>
+        <form class="form">
+            <fieldset class="Info_personal mt-5 px-5 row">
+                <legend>
+                    <h2>Información personal</h2>
+                </legend>
+                <div class="per1 p-3 row">
+                    <div class="form-group col-md">
+                        <h3>Nombre:</h3>
+                        <input type="text" name="first-name" class="form-control">
+                    </div>
+                    <div class="form-group col-md">
+                        <h3>Apellido paterno</h3>
+                        <input type="text" name="last-name1" class="form-control">
+                    </div>
+                    <div class="form-group col-md">
+                        <h3>Apellido materno</h3>
+                        <input type="text" name="last-name2" class="form-control">
+                    </div>
+                </div>
+                <div class="per2 row p-3">
+                    <div class="form-group col-md">
+                        <h3>Edad</h3>
+                        <input type="number" name="age" class="form-control" min="0">
+                    </div>
+                    <div class="form-group col-md">
+                        <h3>Género</h3>
+                        <div class="btn-group btn-group-toggle">
+                            <label class="btn btn-secondary active" data-toggle="buttons">
+                                <input type="radio" name="gender" value="Hombre" id="" checked class="form-control">
+                                Hombre
+                            </label>
+                            <label class="btn btn-secondary active" data-toggle="buttons">
+                                <input type="radio" name="gender" value="Hombre" id="" class="form-control"> Mujer
+                            </label>
+                            <label class="btn btn-secondary active" data-toggle="buttons">
+                                <input type="radio" name="gender" value="Hombre" id="" class="form-control"> Otro
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md">
+                        <h3>Correo electrónico</h3>
+                        <input type="email" name="email" id="" class="form-control">
+                    </div>
+                    <div class="form-group col-md">
+                        <h3>Número telefónico</h3>
+                        <input type="tel" name="" id="" class="form-control">
+                    </div>
+                    <button id="continue" type="button" class="btn btn-1c">Continuar</button>
+                </div>
+
+            </fieldset>
+            <fieldset class="Info_envio mt-5 row px-5" id="Info_envio">
+                <legend>
+                    <h2>Datos de envío</h2>
+                </legend>
+                <div class="env1 row">
+                    <div class="form-group col-md">
+                        <h3>Calle y numero</h3>
+                        <input type="text" name="address1" id="i1" class="form-control">
+                    </div>
+                    <div class="form-group col-md">
+                        <h3>Municipio / Alcaldia</h3>
+                        <input type="text" name="municipality" id="i2" class="form-control">
+                    </div>
+                    <div class="form-group col-md">
+                        <h3>Ciudad / Estado</h3>
+                        <input type="text" name="city-state" id="i3" class="form-control">
+                    </div>
+                    <div class="form-group col-md">
+                        <h3>Código postal</h3>
+                        <input type="text" name="zip-code" id="i4" class="form-control">
+                    </div>
+
+                </div>
+                <hr color="white">
+                <div class="env2 row">
+                    <div class="form-group col-md">
+                        <h3>Número de unidades</h3>
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                Elegir unidades
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">1</a>
+                                <a class="dropdown-item" href="#">2</a>
+                                <a class="dropdown-item" href="#">3</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-control col-md">
+                        <h3>Forma de envío</h3>
+                        <input type="radio" name="shipping" value="Premium" id="">Envío premium (Entrega el mismo
+                        día)
+                        <span class="badge badge-warning">Nuevo</span>
+                        <input type="radio" name="shipping" value="VIP" id="">Envío VIP (Entrega de 2 a 4 días
+                        hábiles)
+                        <span class="badge badge-danger">Aplican restricciones de dimensiones</span>
+                        <input type="radio" name="shipping" value="General" id="" checked>Envío general (Entregas de 3 a
+                        5
+                        semanas)<span class="badge badge-success">Aplican codigos de descuento</span>
+                        <br />
+                        <input type="checkbox" name="envelope" value="regalo" id="">Envolver para regalo
+                    </div>
+                </div>
+
+            </fieldset>
+            <div style="margin: 10px;">
+                <button type="submit" class="btn btn-1c">Enviar</button>
+                <button class="btn btn-1c">Cancelar</button>
+
+            </div>
+        </form>
+
+    </div>
+
 </body>
 
 </html>

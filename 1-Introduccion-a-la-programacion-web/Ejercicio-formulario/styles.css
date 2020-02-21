@@ -1,7 +1,6 @@
-html {
+body {
   font-family: "Raleway", sans-serif;
-  padding: 2em;
-  background-color: #d8d8d8;
+  background-color: #d8d8d8 !important;
 }
 
 .encabezado {
@@ -11,9 +10,7 @@ html {
   padding: 20px;
   text-align: center;
   font-weight: 900;
-  background: linear-gradient(98deg,
-      #f12711,
-      #f5af19);
+  background: linear-gradient(98deg, #f12711, #f5af19);
   background-size: 200% 200%;
   color: #f6f7eb;
   border-radius: 5px;
@@ -26,43 +23,43 @@ html {
 
 @-webkit-keyframes AnimationName {
   0% {
-    background-position: 18% 0%
+    background-position: 18% 0%;
   }
 
   50% {
-    background-position: 83% 100%
+    background-position: 83% 100%;
   }
 
   100% {
-    background-position: 18% 0%
+    background-position: 18% 0%;
   }
 }
 
 @-moz-keyframes AnimationName {
   0% {
-    background-position: 18% 0%
+    background-position: 18% 0%;
   }
 
   50% {
-    background-position: 83% 100%
+    background-position: 83% 100%;
   }
 
   100% {
-    background-position: 18% 0%
+    background-position: 18% 0%;
   }
 }
 
 @keyframes AnimationName {
   0% {
-    background-position: 18% 0%
+    background-position: 18% 0%;
   }
 
   50% {
-    background-position: 83% 100%
+    background-position: 83% 100%;
   }
 
   100% {
-    background-position: 18% 0%
+    background-position: 18% 0%;
   }
 }
 
@@ -76,11 +73,18 @@ html {
 
 h2 {
   color: #542344;
+  font-family: "Raleway", sans-serif;
   font-size: 24px;
   background-color: #ffed66;
   padding: 2px 10px 2px 10px;
   border-radius: 5px;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 700 !important;
 }
 
 .int {
@@ -143,9 +147,7 @@ button {
   font-weight: bold;
   border: unset;
   border-radius: 5px;
-  background: linear-gradient(to right,
-      #ff416c,
-      #ff4b2b);
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
   position: relative;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -153,7 +155,7 @@ button {
 }
 
 button:after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   -webkit-transition: all 0.3s;
@@ -163,8 +165,9 @@ button:after {
 }
 
 .scale-up-center {
-  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 @-webkit-keyframes scale-up-center {
@@ -175,7 +178,7 @@ button:after {
 
   100% {
     -webkit-transform: scale(1.2);
-    transform: scale(1.w);
+    transform: scale(1w);
   }
 }
 
@@ -197,9 +200,10 @@ button:after {
   height: 100%;
   top: 0;
   left: 0;
-  background: #FF5F6D;
-  background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);
-  background: linear-gradient(to right, #FFC371, #FF5F6D);
+  background: #ff5f6d;
+  color: white;
+  background: -webkit-linear-gradient(to right, #ffc371, #ff5f6d);
+  background: linear-gradient(to right, #ffc371, #ff5f6d);
 }
 
 .btn-1c:hover,
