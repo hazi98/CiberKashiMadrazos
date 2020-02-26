@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400i&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <title>Convertidor número a letra</title>
+</head>
+
+<body>
+    <div class="back">
+        <p class="back-text">1 → uno</p>
+    </div>
+    <div class="container p-5">
+        <h1>Conversor de número a letra</h1>
+        <p>Sergio Iván Alcázar Becerra</p>
+        <p>Diana Alicia Cadena Hernández</p>
+        <p>Yoltic Jassiel García Guzmán</p>
+        <form>
+            <div class="form-group">
+                <label for="number-input">Número (0-9999)</label>
+                <input class="form-control" type="number" name="number-input" id="number-input" min="0" max="9999">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="convert()">Convertir</button>
+            <button type="button" class="btn btn-danger" onclick="reset()">Restablecer</button>
+            <input class="mt-3 form-control" id="result" readonly>
+        </form>
+    </div>
+    <script>
+        var digitos = ['cero', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve'];
+        var dieces = ["diez", "once", "doce", "trece", "catorce", "quince", "dieciseis", "diecisiete", "dieciocho",
+            "diecinueve"
+        ];
+        var decenas = ["", "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta",
+            "noventa"
+        ];
+        var centenas = ["", "cien", "doscientos", "trescientos", "cuatrocientos", "quinientos", "seiscientos",
+            "setecientos", "ochocientos", "novecientos"
+        ];
+        var miles = "mil";
+
+        function convert() {
+            num = document.getElementById("number-input").value;
+            num = parseInt(num);
+            num = num.toString();
+
+            var longitud = num.toString().length;
+            console.log("Longitud", longitud);
+            var resultado = "";
+            switch (longitud) {
+                default:
+                    resultado = "Error";
+                    break;
+                case 1:
+                    if (num == "") {
+                        resultado = "Error";
+                    } else {
+                        resultado = unidad(num);
+                    }
+                    break;
+                case 2:
+                    d = parseInt(num.charAt(0));
+                    u = parseInt(num.charAt(1));
+                    resultado = decena(d, u);
+                    break;
+                case 3:
+                    c = parseInt(num.charAt(0));
+                    d = parseInt(num.charAt(1));
+                    u = parseInt(num.charAt(2));
+                    resultado = centena(c, d, u);
+                    break;
+                case 4:
+                    m = parseInt(num.charAt(0));
+                    c = parseInt(num.charAt(1));
+                    d = parseInt(num.charAt(2));
+                    u = parseInt(num.charAt(3));
+                    resultado = millar(m, c, d, u);
+                    break;
+
+            }
+            resultado = resultado.replace(/ +(?= )/g, '');
+            console.log(resultado);
+            resultado = resultado.charAt(0).toUpperCase() + resultado.slice(1);
+            document.getElementById("result").value = resultado;
+        }
+
+        function unidad(u) {
+            return digitos[u];
+        }
+
+        function decena(d, u) {
+            if (d === 1) {
+                return dieces[u];
+            } else if (d > 1 && d < 10) {
+                if (u === 0) {
+                    return decenas[d];
+                }
+                if (d === 2) {
+                    // Veinti
+                    res = "veinti";
+                    res += unidad(u);
+                    return res;
+                }
+                res = decenas[d];
+                res += " y "
+                res += unidad(u);
+                return res;
+            } else {
+                return unidad(u);
+            }
+        }
+
+        function centena(c, d, u) {
+            if (d === 0 && u === 0) {
+                return centenas[c];
+            }
+
+            res = centenas[c];
+            if (c === 1) {
+                res += "to";
+            }
+            res += " " + decena(d, u);
+            return res;
+        }
+
+        function millar(m, c, d, u) {
+            if (c === 0 && d === 0 && u === 0) {
+                if (m === 1) {
+                    return miles;
+                }
+                return unidad(m) + " " + miles;
+            }
+            if (m === 1) {
+                return miles + " " + centena(c, d, u);
+            }
+            return unidad(m) + " " + miles + " " + centena(c, d, u);
+        }
+    </script>
+    </div>
+</body>
+
+</html>

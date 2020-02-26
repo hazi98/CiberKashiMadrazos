@@ -1,0 +1,24 @@
+body {
+    font-family: 'Nunito' !important;
+    background: linear-gradient(to right, #4cb8c4, #3cd3ad);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1,
+p,
+label {
+    color: white;
+}
+
+.back {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.back-text {
+    font-size: 12vh;
+    overflow: hidden;
+    font-family: 'Merriweather';
+    color: rgba(255, 255, 255, 0.5);
+}
