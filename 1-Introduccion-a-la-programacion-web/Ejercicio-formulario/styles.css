@@ -21,6 +21,17 @@ body {
   animation: AnimationName 6s ease infinite;
 }
 
+.encabezado-text {
+  color: #f6f7eb;
+  font-family: "Raleway", sans-serif;
+  font-weight: bolder;
+
+}
+
+.com {
+  color: #e7f84e;
+}
+
 @-webkit-keyframes AnimationName {
   0% {
     background-position: 18% 0%;
@@ -165,8 +176,7 @@ button:after {
 }
 
 .scale-up-center {
-  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
-    both;
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 

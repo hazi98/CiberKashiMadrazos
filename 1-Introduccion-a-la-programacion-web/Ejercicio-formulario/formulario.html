@@ -35,12 +35,20 @@
     <div class="container-fluid p-5">
 
         <div id="encabezado" class="row">
-            <h1 class="encabezado col-md">BIENVENIDO A ENVIOS.COM</h1>
+            <div class="encabezado col-md">
+                <img class="mx-3" src="box.svg" alt="logo" width="60px">
+                <h1 class="encabezado-text col"><span>
+                        envios
+                    </span>
+                    <span class="com">.com</span>
+                </h1>
+            </div>
+
         </div>
 
 
-        <h3 class="i row">Integrantes:</h3>
-        <div class="int row mt-3 p-2">
+        <h3 class="i row my-3">Integrantes:</h3>
+        <div class="int row my-3 p-2">
             <button id="integrantes" class="btn btn-1c">Integrantes</button>
             <ul id="lista-integrantes">
                 <li id="div1 col">Sergio Iván Alcázar Becerra</p>
@@ -125,32 +133,45 @@
                 </div>
                 <hr color="white">
                 <div class="env2 row">
-                    <div class="form-group col-md">
+                    <div class="form-group col">
                         <h3>Número de unidades</h3>
-                        <div class="dropdown">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                Elegir unidades
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">1</a>
-                                <a class="dropdown-item" href="#">2</a>
-                                <a class="dropdown-item" href="#">3</a>
+                        <select class="form-control" name="units" id="units">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col">
+                        <h3>Forma de envío</h3>
+                        <div class="form-check">
+                            <div class="row">
+                                <input class="form-check-input" type="radio" name="shipping-premium" value="Premium"
+                                    id="shipping1">
+                                <label class="form-check-label" for="shipping-premium">Envío premium (Entrega el mismo
+                                    día) <span class="badge badge-primary">Nuevo</span></label>
+                            </div>
+                            <div class="row">
+                                <input class="form-check-input" type="radio" name="shipping-vip" value="VIP"
+                                    id="shipping2">
+                                <label class="form-check-label" for="shipping-vip">Envío VIP (Entrega de 2 a 4 días
+                                    hábiles) <span class="badge badge-danger">Aplican restricciones de
+                                        dimensiones</span></label>
+                            </div>
+                            <div class="row">
+                                <input class="form-check-input" type="radio" name="shipping-general" value="General"
+                                    id="shipping3">
+                                <label class="form-check-label" for="shipping-general">Envío general (Entregas de 3 a 5
+                                    semanas) <span class="badge badge-success">Aplican códigos de
+                                        descuento</span></label>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <input class="form-check-input" type="checkbox" name="envelope" value="regalo"
+                                    id="">Envolver para regalo
                             </div>
                         </div>
-                    </div>
-                    <div class="form-control col-md">
-                        <h3>Forma de envío</h3>
-                        <input type="radio" name="shipping" value="Premium" id="">Envío premium (Entrega el mismo
-                        día)
-                        <span class="badge badge-warning">Nuevo</span>
-                        <input type="radio" name="shipping" value="VIP" id="">Envío VIP (Entrega de 2 a 4 días
-                        hábiles)
-                        <span class="badge badge-danger">Aplican restricciones de dimensiones</span>
-                        <input type="radio" name="shipping" value="General" id="" checked>Envío general (Entregas de 3 a
-                        5
-                        semanas)<span class="badge badge-success">Aplican codigos de descuento</span>
-                        <br />
-                        <input type="checkbox" name="envelope" value="regalo" id="">Envolver para regalo
                     </div>
                 </div>
 
