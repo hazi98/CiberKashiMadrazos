@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Formulario Envíos</title>
@@ -54,14 +55,36 @@
                 <li id="div1 col">Sergio Iván Alcázar Becerra</p>
                 <li id="div2 col">Diana Alicia Cadena Hernández</p>
                 <li id="div3 col">Yoltic Jassiel García Guzmán</p>
+                    <div data-ng-app="" ng-init="names=['Jani','Hege','Kai']">
+                        <p ng-repeat="x in names">
+                            hola,<span ng-repeat="x in names"></span>
+                        </p>
+                    </div>
             </ul>
+
+
         </div>
         <form class="form">
+
+            <div data-ng-app="" class = "row">
+        
+                <h5>Bienvenido 
+                    <span>
+                        {{first-name + ', ' + last-name1 + ', ' + last-name2}}
+                    </span> 
+                    </h5>
+                
+            </div>
+
             <fieldset class="Info_personal mt-5 px-3 row">
                 <legend>
                     <h2>Información personal</h2>
                 </legend>
                 <div class="per1 p-2 row">
+                    <div class="form-group col-md">
+                        <h3>Nombre:</h3>
+                        <input type="text" name="first-name" class="form-control">
+                    </div>
                     <div class="form-group col-md">
                         <h3>Nombre:</h3>
                         <input type="text" name="first-name" class="form-control">
@@ -74,6 +97,7 @@
                         <h3>Apellido materno</h3>
                         <input type="text" name="last-name2" class="form-control">
                     </div>
+
                 </div>
                 <div class="per2 row p-2">
                     <div class="form-group col-md">
@@ -108,28 +132,31 @@
                 </div>
 
             </fieldset>
-            <fieldset class="Info_envio mt-5 row px-3" id="Info_envio">
+            <fieldset class="Info_envio mt-5 row px-3" id="Info_envio" data-ng-app="">
                 <legend>
                     <h2>Datos de envío</h2>
                 </legend>
                 <div class="env1 row">
                     <div class="form-group col-md">
                         <h3>Calle y numero</h3>
-                        <input type="text" name="address1" id="i1" class="form-control">
+                        <input type="text" name="address1" id="i1" class="form-control" ng-model="address">
                     </div>
                     <div class="form-group col-md">
                         <h3>Municipio / Alcaldia</h3>
-                        <input type="text" name="municipality" id="i2" class="form-control">
+                        <input type="text" name="municipality" id="i2" class="form-control" ng-model="municipality">
                     </div>
                     <div class="form-group col-md">
                         <h3>Ciudad / Estado</h3>
-                        <input type="text" name="city-state" id="i3" class="form-control">
+                        <input type="text" name="city-state" id="i3" class="form-control" ng-model="cityState">
                     </div>
                     <div class="form-group col-md">
                         <h3>Código postal</h3>
-                        <input type="text" name="zip-code" id="i4" class="form-control">
+                        <input type="text" name="zip-code" id="i4" class="form-control" ng-model="zipCode">
                     </div>
-
+                </div>
+                <div class="row env1">
+                    <h5>Dirección de envío: {{address + ', ' + municipality + ', ' + cityState + ', CP ' + zipCode}}
+                    </h5>
                 </div>
                 <hr color="white">
                 <div class="env2 row">
@@ -153,15 +180,10 @@
                                     día) <span class="badge badge-primary">Nuevo</span></label>
                             </div>
                             <div class="row">
-                                <input class="form-check-input" type="radio" name="shipping" value="VIP"
-                                    id="shipping2">
-                                <label class="form-check-label" for="shipping2">Envío VIP (Entrega de 2 a 4 días
-                                    hábiles) <span class="badge badge-danger">Aplican restricciones de
-                                        dimensiones</span></label>
-                            </div>
-                            <div class="row">
-                                <input class="form-check-input" type="radio" name="shipping" value="General"
-                                    id="shipping3">
+                                <input class="form-check-input" type="radio" name="shipping" value="VI   id="
+                                    shipping2">
+                                "shipping" value="General"
+                                id="shipping3">
                                 <label class="form-check-label" for="shipping3">Envío general (Entregas de 3 a 5
                                     semanas) <span class="badge badge-success">Aplican códigos de
                                         descuento</span></label>
