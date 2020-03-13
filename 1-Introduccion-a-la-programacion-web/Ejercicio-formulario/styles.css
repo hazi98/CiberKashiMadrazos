@@ -127,10 +127,6 @@ h3 {
   justify-content: space-between;
 }
 
-.Info_envio {
-  display: none;
-}
-
 .env2 {
   align-items: center;
   float: left;
@@ -168,10 +164,6 @@ button:after {
   transition: all 0.3s;
 }
 
-.scale-up-center {
-  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-}
 
 @-webkit-keyframes scale-up-center {
   0% {
@@ -180,8 +172,8 @@ button:after {
   }
 
   100% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1w);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 
@@ -192,14 +184,22 @@ button:after {
   }
 
   100% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 
 /* Button 1c */
 .btn-1c {
   transition: all 0.5s;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-play-state: paused;
+}
+
+.btn-1c:hover {
+  animation-play-state: running;
+  border-color: #56ab2f;
+
 }
 
 .btn-1c:after {
@@ -209,8 +209,7 @@ button:after {
   left: 0;
   background: #ff5f6d;
   color: white;
-  background: -webkit-linear-gradient(to right, #ffc371, #ff5f6d);
-  background: linear-gradient(to right, #ffc371, #ff5f6d);
+  background: #83c038;
 }
 
 .btn-1c:hover,
