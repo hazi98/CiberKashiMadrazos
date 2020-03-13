@@ -47,7 +47,7 @@
                 <li id="div3 col">Yoltic Jassiel García Guzmán</p>
             </ul>
         </div>
-        <form class="form needs-validation" novalidate>
+        <form class="form needs-validation" novalidate name="personalInfo" id="personal-info">
             <div class="row">
                 <h5>Bienvenido
                     <span>
@@ -112,17 +112,19 @@
 
                     <div class="form-group col-md-4">
                         <h3>Correo electrónico</h3>
-                        <input type="email" name="email" id="" class="form-control" required>
+                        <input type="email" name="email" id="" class="form-control" required ng-model="text">
+                        <span ng-show="personalInfo.email.$error.email">No es un email válido</span>
                     </div>
                     <div class="form-group col-md-3">
                         <h3>Número telefónico</h3>
                         <input type="tel" name="phone-number" id="" class="form-control">
                     </div>
-                    <button id="continue" type="button" class="btn btn-1c"
+                    <button id="continue" type="submit" class="btn btn-1c"
                         ng-click="shippingVisible=true">Continuar</button>
                 </div>
-
             </fieldset>
+        </form>
+        <form class="form needs-validation" novalidate name="shippingInfo" id="shipping-info">
             <fieldset class="mt-5 row px-3 bg-light" id="Info_envio" ng-show="shippingVisible">
                 <legend>
                     <h2>Datos de envío</h2>
@@ -210,14 +212,19 @@
                 var forms = document.getElementsByClassName('needs-validation');
                 // Loop over them and prevent submission
                 var validation = Array.prototype.filter.call(forms, function (form) {
+                    console.log(form.id)
                     form.addEventListener('submit', function (event) {
                         if (form.checkValidity() === false) {
                             event.preventDefault();
                             event.stopPropagation();
                         } else {
-                            $("#continue").click(function () {
-                                $(this).hide(400);
-                            });
+                            if (form.id == "personal-info") {
+                                console.log("hello");
+                                $("#continue").click(function () {
+                                    $(this).hide(400);
+                                });
+                            }
+
                         }
                         form.classList.add('was-validated');
 
