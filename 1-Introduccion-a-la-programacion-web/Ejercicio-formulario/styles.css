@@ -1,6 +1,5 @@
 body {
   font-family: "Raleway", sans-serif;
-  background-color: #d8d8d8 !important;
 }
 
 .encabezado {
@@ -84,18 +83,16 @@ body {
 
 h2 {
   color: #542344;
+  background-color: white;
   font-family: "Raleway", sans-serif;
-  font-size: 24px;
-  background-color: #ffed66;
-  padding: 2px 10px 2px 10px;
-  border-radius: 5px;
+  padding: 4px 10px 4px 10px;
+  border: 2px solid #ffed66;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  font-weight: 700 !important;
 }
 
 h3 {
   font-family: "Raleway", sans-serif;
-  font-size: 16px;
-  font-weight: 700 !important;
 }
 
 .int {
@@ -112,7 +109,6 @@ h3 {
 }
 
 .Info_personal {
-  background-color: #00cecb;
   display: none;
 }
 
@@ -132,7 +128,6 @@ h3 {
 }
 
 .Info_envio {
-  background-color: #00cecb;
   display: none;
 }
 
@@ -154,10 +149,9 @@ button {
   font-family: "Raleway", sans-serif;
   display: inline-block;
   font-size: 16px;
-  color: white;
+  color: white !important;
   font-weight: bold;
   border: unset;
-  border-radius: 5px;
   background: linear-gradient(to right, #ff416c, #ff4b2b);
   position: relative;
   -webkit-transition: all 0.3s;
@@ -172,7 +166,6 @@ button:after {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
-  border-radius: 5px;
 }
 
 .scale-up-center {
@@ -205,6 +198,10 @@ button:after {
 }
 
 /* Button 1c */
+.btn-1c {
+  transition: all 0.5s;
+}
+
 .btn-1c:after {
   width: 0%;
   height: 100%;
