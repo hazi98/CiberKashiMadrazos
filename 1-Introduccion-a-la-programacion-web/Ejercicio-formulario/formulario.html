@@ -51,7 +51,7 @@
             <div class="row">
                 <h5>Bienvenido
                     <span>
-                        {{first-name + ', ' + last-name1 + ', ' + last-name2}}
+                        {{firstName + ' ' + middleName + ' ' + lastName}}
                     </span>
                 </h5>
             </div>
@@ -63,21 +63,21 @@
                 <div class="per1 p-2 row">
                     <div class="form-group col-md-4">
                         <h3>Nombres:</h3>
-                        <input type="text" name="first-name" class="form-control" required>
+                        <input type="text" name="first-name" class="form-control" required ng-model="firstName">
                         <div class="invalid-feedback">
                             Debe de escribir un nombre.
                         </div>
                     </div>
                     <div class="form-group col-md-4">
                         <h3>Apellido paterno</h3>
-                        <input type="text" name="middle-name" class="form-control" required>
+                        <input type="text" name="middle-name" class="form-control" required ng-model="middleName">
                         <div class="invalid-feedback">
                             Debe de escribir un apellido.
                         </div>
                     </div>
                     <div class="form-group col-md-4">
                         <h3>Apellido materno</h3>
-                        <input type="text" name="last-name" class="form-control" required>
+                        <input type="text" name="last-name" class="form-control" required ng-model="lastName">
                         <div class="invalid-feedback">
                             Debe de escribir un apellido.
                         </div>
