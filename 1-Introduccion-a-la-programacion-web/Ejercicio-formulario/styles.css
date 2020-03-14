@@ -1,7 +1,12 @@
 body {
   font-family: "Raleway", sans-serif;
 }
-
+.mensaje{
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
 .encabezado {
   min-width: 20%;
   border: 5px solid #ffffea;
