@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -10,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="XML_JSON.js"></script>
     <script>
         $(document).ready(function () {
             $(".Info_personal").fadeIn(1000);
@@ -210,13 +212,6 @@
 
     <script>
         //implementación de xml y JSON
-        var boolDataMode_XML = 1;
-        var boolDataMode_JSON = 2;
-        var boolDataMode = boolDataMode_JSON;
-
-
-
-
 
 
         // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -249,49 +244,7 @@
             }, false);
         })();
 
-        function continuar(){
-            nombre = document.getElementById("nombre").value;
-            edad = document.getElementById("edad").value;
-            genero = "";
-            if(document.getElementById("genH").checked == true)
-            {
-                genero="Hombre";
-            }
-            else{
-                if(document.getElementById("genM").checked ==true)
-                {
-                    genero="Mujer";
-                }
-                else{
-                    genero = "Otro";
-                }
-            } //else
-            correo = document.getElementById("correo").value;
-            cel = document.getElementById("cel").value;
-            if(boolDataMode == boolDataMode_JSON)
-            {
-                var obj = {
-                nombre: '',
-                edad: '',
-                genero:'',
-                correo:'',
-                cel:''
-		        }
-                obj.nombre = nombre;
-                obj.edad = edad;
-                obj.genero = genero;
-                obj.correo = correo;
-                obj.cel = cel;
-
-                clientes.cliente.push(obj);
-                alert("Alta realizada");
-            }
-            else if (boolDataMode == boolDataMode_XML)
-            {
-
-            }
-
-        }//continuar
+        
     </script>
 
 </body>
