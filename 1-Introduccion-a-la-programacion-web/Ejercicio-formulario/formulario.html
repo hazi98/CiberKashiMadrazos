@@ -63,7 +63,7 @@
                 <div class="per1 p-2 row">
                     <div class="form-group col-md-4">
                         <h3>Nombres:</h3>
-                        <input type="text" name="first-name" class="form-control" required ng-model="firstName">
+                        <input type="text" id="nombre" name="first-name" class="form-control" required ng-model="firstName">
                         <div class="invalid-feedback">
                             Debe de escribir un nombre.
                         </div>
@@ -87,7 +87,7 @@
                 <div class="per2 row p-2">
                     <div class="form-group col-md-2">
                         <h3>Edad</h3>
-                        <input type="number" name="age" class="form-control" min="0" required>
+                        <input type="number" id="edad" name="age" class="form-control" min="0" required>
                         <div class="invalid-feedback">
                             Debe de especificar edad.
                         </div>
@@ -96,31 +96,31 @@
                         <h3>Género</h3>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-secondary">
-                                <input type="radio" name="gender" value="Hombre" id="btn-hombre" autocomplete="off"
+                                <input type="radio" id="genH" name="gender" value="Hombre" id="btn-hombre" autocomplete="off"
                                     required>
                                 Hombre
                             </label>
                             <label class="btn btn-secondary">
-                                <input type="radio" name="gender" value="Mujer" id="btn-mujer" autocomplete="off">
+                                <input type="radio" id="genM" name="gender" value="Mujer" id="btn-mujer" autocomplete="off">
                                 Mujer
                             </label>
                             <label class="btn btn-secondary">
-                                <input type="radio" name="gender" value="Otro" id="btn-otro" autocomplete="off"> Otro
+                                <input type="radio" id="genO" name="gender" value="Otro" id="btn-otro" autocomplete="off"> Otro
                             </label>
                         </div>
                     </div>
 
                     <div class="form-group col-md-4">
                         <h3>Correo electrónico</h3>
-                        <input type="email" name="email" id="" class="form-control" required ng-model="text">
+                        <input type="email" id="correo" name="email" id="" class="form-control" required ng-model="text">
                         <span ng-show="personalInfo.email.$error.email">No es un email válido</span>
                     </div>
                     <div class="form-group col-md-3">
                         <h3>Número telefónico</h3>
-                        <input type="tel" name="phone-number" id="" class="form-control">
+                        <input type="tel" id="cel" name="phone-number" id="" class="form-control">
                     </div>
                     <button id="continue" type="submit" class="btn btn-1c"
-                        ng-click="shippingVisible=true">Continuar</button>
+                        ng-click="shippingVisible=true" onclick="continuar()">Continuar</button>
                 </div>
             </fieldset>
         </form>
@@ -209,6 +209,16 @@
     </div>
 
     <script>
+        //implementación de xml y JSON
+        var boolDataMode_XML = 1;
+        var boolDataMode_JSON = 2;
+        var boolDataMode = boolDataMode_JSON;
+
+
+
+
+
+
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         
         (function () {
@@ -238,6 +248,50 @@
                 });
             }, false);
         })();
+
+        function continuar(){
+            nombre = document.getElementById("nombre").value;
+            edad = document.getElementById("edad").value;
+            genero = "";
+            if(document.getElementById("genH").checked == true)
+            {
+                genero="Hombre";
+            }
+            else{
+                if(document.getElementById("genM").checked ==true)
+                {
+                    genero="Mujer";
+                }
+                else{
+                    genero = "Otro";
+                }
+            } //else
+            correo = document.getElementById("correo").value;
+            cel = document.getElementById("cel").value;
+            if(boolDataMode == boolDataMode_JSON)
+            {
+                var obj = {
+                nombre: '',
+                edad: '',
+                genero:'',
+                correo:'',
+                cel:''
+		        }
+                obj.nombre = nombre;
+                obj.edad = edad;
+                obj.genero = genero;
+                obj.correo = correo;
+                obj.cel = cel;
+
+                clientes.cliente.push(obj);
+                alert("Alta realizada");
+            }
+            else if (boolDataMode == boolDataMode_XML)
+            {
+
+            }
+
+        }//continuar
     </script>
 
 </body>
