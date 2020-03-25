@@ -16,38 +16,35 @@ var parser = new DOMParser();
 var xmlDoc = parser.parseFromString(txt, "text/xml");
 
 var txtj = '{"cliente":['
-        +'{"nombre":Jassiel, "edad": "21","genero":"Hombre", "correo":"dfghj@fghj.com", "cel":"12345678"}'
-        +']}';
+    + '{"nombre":"Jassiel", "edad": "21","genero":"Hombre", "correo":"dfghj@fghj.com", "cel":"12345678"}'
+    + ']}';
 var clientes = JSON.parse(txtj);
 
 
-function continuar(){
+function continuar() {
     nombre = document.getElementById("nombre").value;
-    edad = document.getElementById("edad").value;
+    edad = document.getElementById("age").value;
     genero = "";
-    if(document.getElementById("genH").checked == true)
-    {
-        genero="Hombre";
+    if (document.getElementById("genH").checked == true) {
+        genero = "Hombre";
     }
-    else{
-        if(document.getElementById("genM").checked ==true)
-        {
-            genero="Mujer";
+    else {
+        if (document.getElementById("genM").checked == true) {
+            genero = "Mujer";
         }
-        else{
+        else {
             genero = "Otro";
         }
     } //else
     correo = document.getElementById("correo").value;
     cel = document.getElementById("cel").value;
-    if(boolDataMode == boolDataMode_JSON)
-    {
+    if (boolDataMode == boolDataMode_JSON) {
         var obj = {
-        nombre: '',
-        edad: '',
-        genero:'',
-        correo:'',
-        cel:''
+            nombre: '',
+            edad: '',
+            genero: '',
+            correo: '',
+            cel: ''
         }
         obj.nombre = nombre;
         obj.edad = edad;
@@ -58,8 +55,7 @@ function continuar(){
         clientes.cliente.push(obj);
         alert("Alta realizada");
     }
-    else if (boolDataMode == boolDataMode_XML)
-    {
+    else if (boolDataMode == boolDataMode_XML) {
 
     }
 

@@ -6,7 +6,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Formulario Envíos</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>Envios.com</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -27,7 +34,7 @@
     </script>
 </head>
 
-<body >
+<body>
     <div class="container-fluid p-5" data-ng-app="">
         <div id="encabezado" class="row">
             <div class="encabezado col-md">
@@ -49,7 +56,8 @@
                 <li id="div3 col">Yoltic Jassiel García Guzmán</p>
             </ul>
         </div>
-        <form class="form needs-validation" novalidate name="personalInfo" id="personal-info">
+
+        <form class="form needs-validation" novalidate name="personal-info" id="personal-info" method="POST">
             <div class="row">
                 <h5>Bienvenido
                     <span>
@@ -57,15 +65,24 @@
                     </span>
                 </h5>
             </div>
-
             <fieldset class="Info_personal mt-5 px-3 row bg-light">
                 <legend>
                     <h2>Información personal</h2>
                 </legend>
+                <div class="my-2 row d-flex justify-content-center">
+                    <div id="consulta">
+
+                    </div>
+                </div>
+                <div class="row mx-2">
+                    <h2>Añadir nuevo registro</h2>
+                </div>
                 <div class="per1 p-2 row">
+
                     <div class="form-group col-md-4">
                         <h3>Nombres:</h3>
-                        <input type="text" id="nombre" name="first-name" class="form-control" required ng-model="firstName">
+                        <input type="text" id="nombre" name="first-name" class="form-control" required
+                            ng-model="firstName">
                         <div class="invalid-feedback">
                             Debe de escribir un nombre.
                         </div>
@@ -89,7 +106,7 @@
                 <div class="per2 row p-2">
                     <div class="form-group col-md-2">
                         <h3>Edad</h3>
-                        <input type="number" id="edad" name="age" class="form-control" min="0" required>
+                        <input type="number" id="age" name="age" class="form-control" min="0" required>
                         <div class="invalid-feedback">
                             Debe de especificar edad.
                         </div>
@@ -98,35 +115,39 @@
                         <h3>Género</h3>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-secondary">
-                                <input type="radio" id="genH" name="gender" value="Hombre" id="btn-hombre" autocomplete="off"
-                                    required>
+                                <input type="radio" id="genH" name="gender" value="Hombre" id="btn-hombre"
+                                    autocomplete="off" required>
                                 Hombre
                             </label>
                             <label class="btn btn-secondary">
-                                <input type="radio" id="genM" name="gender" value="Mujer" id="btn-mujer" autocomplete="off">
+                                <input type="radio" id="genM" name="gender" value="Mujer" id="btn-mujer"
+                                    autocomplete="off">
                                 Mujer
                             </label>
                             <label class="btn btn-secondary">
-                                <input type="radio" id="genO" name="gender" value="Otro" id="btn-otro" autocomplete="off"> Otro
+                                <input type="radio" id="genO" name="gender" value="Otro" id="btn-otro"
+                                    autocomplete="off"> Otro
                             </label>
                         </div>
                     </div>
 
                     <div class="form-group col-md-4">
                         <h3>Correo electrónico</h3>
-                        <input type="email" id="correo" name="email" id="" class="form-control" required ng-model="text">
+                        <input type="email" id="correo" name="email" id="" class="form-control" required
+                            ng-model="text">
                         <span ng-show="personalInfo.email.$error.email">No es un email válido</span>
                     </div>
                     <div class="form-group col-md-3">
                         <h3>Número telefónico</h3>
                         <input type="tel" id="cel" name="phone-number" id="" class="form-control">
                     </div>
-                    <button id="continue" type="submit" class="btn btn-1c"
-                        ng-click="shippingVisible=true" onclick="continuar()">Continuar</button>
+                    <button id="continue" type="submit" class="btn btn-1c" ng-click="shippingVisible=true"
+                        onclick="continuar()">Continuar</button>
                 </div>
             </fieldset>
         </form>
-        <form class="form needs-validation" novalidate name="shippingInfo" id="shipping-info">
+        <form class="form needs-validation" novalidate name="shipping-info" id="shipping-info"
+            action="alta-direccion.php" method="POST">
             <fieldset class="mt-5 row px-3 bg-light" id="Info_envio" ng-show="shippingVisible">
                 <legend>
                     <h2>Datos de envío</h2>
@@ -134,7 +155,7 @@
                 <div class="env1 row">
                     <div class="form-group col-md">
                         <h3>Calle y numero</h3>
-                        <input type="text" name="address1" id="i1" class="form-control" ng-model="address">
+                        <input type="text" name="address" id="i1" class="form-control" ng-model="address">
                     </div>
                     <div class="form-group col-md">
                         <h3>Municipio / Alcaldia</h3>
@@ -187,27 +208,22 @@
                                         descuento</span></label>
                             </div>
                             <hr>
-                            
                         </div>
                     </div>
                 </div>
-                <div class="form-group col" ng-controller="myCtrl" >
+                <div class="form-group col">
                     <input class="form-check-input" type="checkbox" name="envelope" value="regalo" ng-checked="regalo()"
-                        id="" >Envolver para regalo<br/>
-                        <div ng-show="showMe">
-                            <input type="text"  class="form-control" placeholder="Escribe aquí tu felicitación!" >
-                        </div>
-                        
+                        id="">Envolver para regalo<br />
+                    <div ng-show="showMe">
+                        <input type="text" class="form-control" placeholder="Escribe aquí tu felicitación!">
+                    </div>
                 </div>
-
             </fieldset>
             <div style="margin: 10px;">
-                <button type="submit" class="btn btn-1c">Enviar</button>
+                <button type="submit" class="btn btn-1c" onclick="enviarFormulario()">Enviar</button>
                 <button class="btn btn-1c">Cancelar</button>
-
             </div>
         </form>
-
     </div>
 
     <script>
@@ -215,7 +231,7 @@
 
 
         // Example starter JavaScript for disabling form submissions if there are invalid fields
-        
+
         (function () {
             'use strict';
             window.addEventListener('load', function () {
@@ -223,19 +239,10 @@
                 var forms = document.getElementsByClassName('needs-validation');
                 // Loop over them and prevent submission
                 var validation = Array.prototype.filter.call(forms, function (form) {
-                    console.log(form.id)
                     form.addEventListener('submit', function (event) {
                         if (form.checkValidity() === false) {
                             event.preventDefault();
                             event.stopPropagation();
-                        } else {
-                            if (form.id == "personal-info") {
-                                console.log("hello");
-                                $("#continue").click(function () {
-                                    $(this).hide(400);
-                                });
-                            }
-
                         }
                         form.classList.add('was-validated');
 
@@ -243,10 +250,43 @@
                 });
             }, false);
         })();
-
-        
     </script>
+    <script>
+        $(document).ready(function () {
+            $("#personal-info").submit(function (e) {
+                //Stops submit button from refreshing page.
+                e.preventDefault();
+                var form_data = new FormData(this);
+                $.ajax({
+                    type: "POST",
+                    url: 'alta-persona.php',
+                    data: form_data,
+                    contentType: false,
+                    processData: false,
+                    dataType: 'json',
+                    success: function (response) {
+                        console.log(JSON.stringify(response));
+                        console.log('success');
+                        consultar();
+                    },
+                    error: function (response) {
+                        console.log(response);
+                        console.log('failure');
+                    }
+                });
+            });
+            consultar();
 
+        });
+
+        function consultar() {
+            $.get("consulta.php", function (data, status) {
+                if (status === "success") {
+                    $("#consulta").html(data);
+                }
+            })
+        }
+    </script>
 </body>
 
 </html>
