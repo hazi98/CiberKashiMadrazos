@@ -231,3 +231,60 @@ button:after {
 .btn-1c:active:after {
   width: 100%;
 }
+
+/*ESTO ES PARA INTENTAR CAMBIAR EL CSS DE LA TABLA RESPONSIVA. SI NO FUNCIONA BORRAR DESDE ACA*/
+
+.table.table-hover table-responsive{
+  border: 4px solid #B86E51;
+  background-color: #CA7E47;
+  width: 400px;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+table.table-hover table-responsive td, table.table-hover table-responsive th {
+  border: 1px solid #555555;
+  padding: 5px 10px;
+}
+table.table-hover table-responsive tbody td {
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+table.table-hover table-responsive tr:nth-child(even) {
+  background: #A46C22;
+}
+table.table-hover table-responsive td:nth-child(even) {
+  background: #A4642C;
+}
+table.table-hover table-responsive thead {
+  background: #A45D3C;
+  background: -moz-linear-gradient(top, #bb856d 0%, #ad6d4f 66%, #A45D3C 100%);
+  background: -webkit-linear-gradient(top, #bb856d 0%, #ad6d4f 66%, #A45D3C 100%);
+  background: linear-gradient(to bottom, #bb856d 0%, #ad6d4f 66%, #A45D3C 100%);
+  border-bottom: 10px solid #A46141;
+}
+table.table-hover table-responsive thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: left;
+  border-left: 2px solid #A46155;
+}
+table.table-hover table-responsive thead th:first-child {
+  border-left: none;
+}
+
+table.table-hover table-responsive tfoot td {
+  font-size: 13px;
+}
+table.table-hover table-responsive tfoot .links {
+  text-align: right;
+}
+table.table-hover table-responsive tfoot .links a{
+  display: inline-block;
+  background: #FFFFFF;
+  color: #398AA4;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
