@@ -21,23 +21,13 @@
 </head>
 
 <body>
-    <div class="container p-5">
-        <div class="row">
-            <h2><span class="mdi mdi-account-search"> </span>Baja de información</h2>
-        </div>
-        <div class="row py-3">
-            <div class="col-md-3 my-2">
-                <a role="button" class="btn btn-secondary" href="baja_persona.html"><span class="mdi mdi-account-key">
-                    </span>
-                    Baja de persona</a>
-            </div>
-            <div class="col-md-3 my-2">
-                <a role="button" class="btn btn-secondary" href="baja_direccion.html"><span
-                        class="mdi mdi-account-multiple">
-                    </span>Baja de direccion</a>
-            </div>
-        </div>
-    </div>
+    <!--dir_alta_procesa_noseguro.php-->
+    <form action="baja_busca.php" method="get">
+        <!--//los valores se muestran en el url de destino.-->
+        <h1>Dar de baja - Información personal </h1>
+        Clave de la persona a dar de baja (id): <input type="text" name="id"><br>
+        <input type="submit" value="Buscar">
+    </form>
 
 </body>
 

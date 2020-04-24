@@ -12,16 +12,14 @@ if (!$conn) {
 }
 
 // prepare and bind
-$stmt = $conn->prepare("DELETE FROM `personal-info`WHERE `middle-name` =?" );
-$stmt->bind_param("s", $middlename);
+$stmt = $conn->prepare("DELETE FROM `shipping-info` WHERE `address`=?" );
+$stmt->bind_param("s", $address);
 
-$firstname = $_GET["first-name"];
-$middlename= $_GET["middle-name"];
-$lastname = $_GET["last-name"];
-$age = $_GET["age"];
-$gender = $_GET["gender"];
-$email = $_GET["email"];
-$phonenumber = $_GET["phone-number"];
+$address = $_GET["address"];
+$municipality= $_GET["municipality"];
+$citystate = $_GET["city-state"];
+$zipcode = $_GET["zip-code"];
+
 
 $stmt->execute();
 
@@ -30,7 +28,7 @@ $conn->close();
 
 ?>
 <h1>Directorio Baja - Realizada</h1>
-Nombre: <?php echo $_GET["first-name"]; ?><br>
-Correo: <?php echo $_GET["email"]; ?><br>
-Celular: <?php echo $_GET["phone-number"]; ?><br>
+Dirección: <?php echo $_GET["address"]; ?><br>
+Ciudad: <?php echo $_GET["city-state"]; ?><br>
+Código Postal: <?php echo $_GET["zip-code"]; ?><br>
 <a role="button" class="btn btn-info" href="formulario.html">Regresar</a>

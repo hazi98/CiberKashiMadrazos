@@ -64,6 +64,9 @@
                     <h2>Información personal</h2>
                 </legend>
                 <div class="my-2 row d-flex justify-content-center">
+                    <div class="spinner-border" id="spinner" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
                     <div id="consulta">
 
                     </div>
@@ -221,8 +224,9 @@
             </fieldset>
             <div style="margin: 10px;">
                 <button type="submit" class="btn btn-1c" onclick="enviarFormulario()">Enviar</button>
-                <button class="btn btn-1c">Cancelar</button>
+                <!-- <button class="btn btn-1c">Cancelar</button> -->
                 <a role="button" class="btn btn-info" href="buscar.html">Buscar</a>
+                <a role="button" class="btn btn-info" href="baja.html">Dar de baja</a>
                 <a role="button" class="btn btn-info" href="modifica.html">Modificar</a>
             </div>
         </form>
@@ -284,7 +288,10 @@
         function consultar() {
             $.get("consulta.php", function (data, status) {
                 if (status === "success") {
+                    $('#spinner').hide();
+                    $('#consulta').slideUp();
                     $("#consulta").html(data);
+                    $('#consulta').slideDown();
                 }
             })
         }

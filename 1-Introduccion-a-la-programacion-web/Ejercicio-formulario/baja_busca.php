@@ -19,6 +19,7 @@ $id = $_GET["id"];
 if($stmt->execute())
 {
 	$stmt->bind_result($firstname,  $middlename, $lastname, $age, $gender, $email, $phonenumber);
+	//$result= $stmt->get_result();
 	$stmt->fetch();
 
 ?>

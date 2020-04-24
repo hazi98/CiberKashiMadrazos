@@ -45,3 +45,4 @@ $conn->close();
 Direccion:<?php echo $_POST["address"]; ?> <br>
 Municipio:<?php echo $_POST["municipality"]; ?> <br>
 Unidades:<?php echo $_POST["units"]; ?> <br>
+<a role="button" class="btn btn-info" href="formulario.html">Regresar</a>
