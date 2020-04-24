@@ -30,7 +30,7 @@ if ($result->num_rows>0)
 else
 {
 ?>
-        <p>No hay regostros</p>
+        <p>No hay registros</p>
 <?php
 }//else
 	
