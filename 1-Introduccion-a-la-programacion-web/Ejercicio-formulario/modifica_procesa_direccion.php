@@ -1,5 +1,3 @@
-<html>
-
 <head>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
@@ -10,7 +8,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="materialdesignicons.min.css">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>Envios.com</title>
@@ -34,15 +32,45 @@
 
         </div>
         <div class="row py-3">
-            <h2>Dar de baja - Información personal </h2>
+            <h2>Formulario Modificación Dirección - Realizada</h2>
         </div>
-        <!--dir_alta_procesa_noseguro.php-->
-        <form action="baja_busca.php" method="get">
-            <!--//los valores se muestran en el url de destino.-->
-            Clave de la persona a dar de baja (id): <input type="text" name="id" class="form-control"><br>
-            <input type="submit" class="btn btn-primary" value="Buscar">
-        </form>
-    </div>
-</body>
 
+
+<?php
+$servername = "localhost";
+$username = "usuario";
+$password = "admin";
+$dbname = "formulario";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// prepare and bind
+$stmt = $conn->prepare("UPDATE `shipping-info` SET `address`=?,`municipality`=?,`city-state`=?,`zip-code`=?,`fk_id`=? WHERE id=?");
+$stmt->bind_param("sssiii", $address, $municipality, $citystate, $zipcode, $fk_id, $id);
+$address = $_POST["address"] ?? '';
+$municipality = $_POST["municipality"] ?? '';
+$citystate = $_POST["city-state"] ?? '';
+$zipcode = $_POST["zip-code"] ?? '';
+$fk_id = $_POST["fk_id"] ?? '';
+$id = $_POST["id"];
+
+$stmt->execute();
+
+$stmt->close();
+$conn->close();
+
+?>
+<h3>
+Dirección: <?php echo $address . ', ' . $municipality . ', ' . $citystate . ', ' . $zipcode?><br>
+ID de la Persona: <?php echo $fk_id ?><br>
+ID de dirección: <?php echo $id ?><br>
+</h3>
+<a role="button" class="btn btn-info" href="formulario.html">Regresar</a>
+
+</body>
 </html>

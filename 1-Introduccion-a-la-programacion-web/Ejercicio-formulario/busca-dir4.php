@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
@@ -10,7 +9,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>Envios.com</title>
@@ -18,10 +16,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-</head>
+    <script src="XML_JSON.js"></script>
 
+</head>
 <body>
-    <div class="container p-5">
+<div class="container p-5">
         <div id="encabezado" class="row">
             <div class="encabezado col-md">
                 <img class="mx-3" src="box.svg" alt="logo" width="60px">
@@ -34,15 +33,58 @@
 
         </div>
         <div class="row py-3">
-            <h2>Dar de baja - Información personal </h2>
+            <h2>Buscar con Links </h2>
         </div>
-        <!--dir_alta_procesa_noseguro.php-->
-        <form action="baja_busca.php" method="get">
-            <!--//los valores se muestran en el url de destino.-->
-            Clave de la persona a dar de baja (id): <input type="text" name="id" class="form-control"><br>
-            <input type="submit" class="btn btn-primary" value="Buscar">
-        </form>
+
+    <form id="form-busca" class="form">
+<?php
+$servername = "localhost";
+$username = "usuario";
+$password = "admin";
+$dbname = "formulario";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$stmt = $conn->prepare("SELECT `address`, `municipality`, `city-state`, `zip-code`, `id`, `fk_id` FROM `shipping-info` ");
+
+$stmt->execute();
+$result = $stmt->get_result();
+if ($result->num_rows>0)
+{
+    while($row = $result->fetch_assoc()) {
+        echo '<h3><a class="badge badge-info" target="busca_procesa-dir3.php?id='. $row["id"]. '">'. $row["address"] .', ' . $row["municipality"] .', '.$row["city-state"].', '. $row["zip-code"] .'</a></h3>';
+    }
+}//if
+else
+{
+?>
+        <p>No hay registros</p>
+<?php
+}//else
+	
+$stmt->close();
+$conn->close();
+
+?>
+    </form>
+    <div class="row" id="resultado-busca">
+
     </div>
 </body>
 
+<script>
+    $(document).ready(function () {
+        $('a').click(function(){
+            var target = $(this).attr('target');
+            $.get(target, function(data){
+                $("#resultado-busca").html(data);
+            })
+        })
+    });
+</script>
 </html>

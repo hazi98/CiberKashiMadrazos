@@ -33,6 +33,7 @@ $object->email = $email;
 $object->phonenumber = $phonenumber;
 
 if($stmt->execute()){
+    $object->id = mysqli_insert_id($conn);
     // Regresar un JSON
     header('Content-type: application/json');
     echo json_encode($object, JSON_FORCE_OBJECT);

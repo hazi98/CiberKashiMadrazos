@@ -21,23 +21,54 @@
 </head>
 
 <body>
+    <div class="container p-5">
+        <div id="encabezado" class="row">
+            <div class="encabezado col-md">
+                <img class="mx-3" src="box.svg" alt="logo" width="60px">
+                <h1 class="encabezado-text col"><span>
+                        envios
+                    </span>
+                    <span class="com">.com</span>
+                </h1>
+            </div>
 
-    <form action="busca_procesa2.php" method="post">
-        <h1>Formulario - Busca por campo</h1>
-        <select name="campo">
-            <option value="first-name">Nombre</option>
-            <option value="middle-name">Apellido Paterno</option>
-            <option value="last-name">Apellido Materno</option>
-            <option value="email">Correo</option>
-            <option value="phone-number">Celular</option>
-        </select>
-        <br>
-        Valor del Campo de Búsqueda: <input type="text" name="valor"><br>
-        <input type="submit" value="Busca">
-    </form>
+        </div>
+        <div class="row py-3">
+            <h2>Formulario - Busca por campo </h2>
+        </div>
+        <form action="busca_procesa2.php" method="post" class="row form" id="form-busca">
+            <div class="from-group col-md-5">
+                <label for="campo">Campo:</label>
+                <select name="campo" class="form-control" id="campo">
+                    <option value="first-name">Nombre</option>
+                    <option value="middle-name">Apellido Paterno</option>
+                    <option value="last-name">Apellido Materno</option>
+                    <option value="email">Correo</option>
+                    <option value="phone-number">Celular</option>
+                </select>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="valor">Valor del Campo de Búsqueda:</label>
+                <input type="text" name="valor" id="valor" class="form-control"><br>
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-primary" value="Busca">
+            </div>
+        </form>
+        <div class="row" id="resultado-busca">
+
+        </div>
 
 </body>
-
-</body>
+<script>
+    $(document).ready(function () {
+        $("#form-busca").submit(function (e) {
+            e.preventDefault();
+            $.post("busca_procesa2.php", $(this).serialize(), function (data) {
+                $("#resultado-busca").html(data);
+            })
+        })
+    })
+</script>
 
 </html>

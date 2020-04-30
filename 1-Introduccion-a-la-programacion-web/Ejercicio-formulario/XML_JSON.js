@@ -21,7 +21,7 @@ var txtj = '{"cliente":['
 var clientes = JSON.parse(txtj);
 
 
-function continuar() {
+function continuar2() {
     nombre = document.getElementById("nombre").value;
     edad = document.getElementById("age").value;
     genero = "";
@@ -58,5 +58,7 @@ function continuar() {
     else if (boolDataMode == boolDataMode_XML) {
 
     }
+
+
 
 }//continuar

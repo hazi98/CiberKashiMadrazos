@@ -15,6 +15,7 @@
     <meta name="theme-color" content="#ffffff">
     <title>Envios.com</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -136,49 +137,56 @@
 
                     <div class="form-group col-md-4">
                         <h3>Correo electrónico</h3>
-                        <input type="email" id="correo" name="email" id="" class="form-control" required
-                            ng-model="text">
+                        <input type="email" id="correo" name="email" class="form-control" required ng-model="text">
                         <span ng-show="personalInfo.email.$error.email">No es un email válido</span>
                     </div>
                     <div class="form-group col-md-3">
                         <h3>Número telefónico</h3>
-                        <input type="tel" id="cel" name="phone-number" id="" class="form-control">
+                        <input type="tel" id="cel" name="phone-number" size="15" class="form-control">
                     </div>
-                    <button id="continue" type="submit" class="btn btn-1c" ng-click="shippingVisible=true"
-                        onclick="continuar()">Continuar</button>
+                    <button id="continue" type="submit" class="btn btn-1c" onclick="continuar()">Continuar</button>
                 </div>
             </fieldset>
         </form>
         <form class="form needs-validation" novalidate name="shipping-info" id="shipping-info"
             action="alta-direccion.php" method="POST">
-            <fieldset class="mt-5 row px-3 bg-light" id="Info_envio" ng-show="shippingVisible">
+            <fieldset class="mt-5 px-3 bg-light" id="Info_envio">
                 <legend>
                     <h2>Datos de envío</h2>
                 </legend>
-                <div class="env1 row">
-                    <div class="form-group col-md">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <h3>ID de la Persona</h3>
+                        <select name="fk_id" id="fk_id" class="form-control">
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Dirección de envío: {{address + ', ' + municipality + ', ' + cityState + ', CP ' + zipCode}}
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-3">
                         <h3>Calle y numero</h3>
-                        <input type="text" name="address" id="i1" class="form-control" ng-model="address">
+                        <input type="text" name="address" id="i1" class="form-control" ng-model="address" required>
                     </div>
-                    <div class="form-group col-md">
+                    <div class="form-group col-md-3">
                         <h3>Municipio / Alcaldia</h3>
-                        <input type="text" name="municipality" id="i2" class="form-control" ng-model="municipality">
+                        <input type="text" name="municipality" id="i2" class="form-control" ng-model="municipality"
+                            required>
                     </div>
-                    <div class="form-group col-md">
+                    <div class="form-group col-md-3">
                         <h3>Ciudad / Estado</h3>
-                        <input type="text" name="city-state" id="i3" class="form-control" ng-model="cityState">
+                        <input type="text" name="city-state" id="i3" class="form-control" ng-model="cityState" required>
                     </div>
-                    <div class="form-group col-md">
+                    <div class="form-group col-md-3">
                         <h3>Código postal</h3>
-                        <input type="text" name="zip-code" id="i4" class="form-control" ng-model="zipCode">
+                        <input type="text" name="zip-code" id="i4" class="form-control" ng-model="zipCode" required>
                     </div>
                 </div>
-                <div class="row env1 m-3">
-                    <h5>Dirección de envío: {{address + ', ' + municipality + ', ' + cityState + ', CP ' + zipCode}}
-                    </h5>
-                </div>
+
                 <hr color="white">
-                <div class="env2 row">
+                <div class="row m-3">
                     <div class="form-group col">
                         <h3>Número de unidades</h3>
                         <select class="form-control" name="units" id="units">
@@ -194,13 +202,13 @@
                         <div class="form-check">
                             <div class="row">
                                 <input class="form-check-input" type="radio" name="shipping" value="Premium"
-                                    id="shipping1">
+                                    id="shipping1" required>
                                 <label class="form-check-label" for="shipping1">Envío premium (Entrega el mismo
                                     día) <span class="badge badge-primary">Nuevo</span></label>
                             </div>
                             <div class="row">
                                 <input class="form-check-input" type="radio" name="shipping" value="VIP" id="shipping2">
-                                <label class="form-check-label" for="shipping2">Envío VIP<span
+                                <label class="form-check-label" for="shipping2">Envío VIP <span
                                         class="badge badge-primary">Nuevo</span></label>
                             </div>
                             <div class="row">
@@ -213,23 +221,54 @@
                             <hr>
                         </div>
                     </div>
-                </div>
-                <div class="form-group col">
-                    <input class="form-check-input" type="checkbox" name="envelope" value="regalo" ng-checked="regalo()"
-                        id="">Envolver para regalo<br />
-                    <div ng-show="showMe">
-                        <input type="text" class="form-control" placeholder="Escribe aquí tu felicitación!">
+                    <div class="form-group col">
+                        <input class="form-check-input" type="checkbox" name="envelope" value="regalo"
+                            ng-model="showEnvelopeToggle" id="">Envolver para regalo<br />
+                        <div ng-show="showEnvelopeToggle">
+                            <input type="text" class="form-control hideShow"
+                                placeholder="Escribe aquí tu felicitación!">
+                        </div>
                     </div>
                 </div>
             </fieldset>
             <div style="margin: 10px;">
-                <button type="submit" class="btn btn-1c" onclick="enviarFormulario()">Enviar</button>
+                <button type="submit" class="btn btn-1c"><span class="mdi mdi-send"> </span>Enviar</button>
                 <!-- <button class="btn btn-1c">Cancelar</button> -->
-                <a role="button" class="btn btn-info" href="buscar.html">Buscar</a>
-                <a role="button" class="btn btn-info" href="baja.html">Dar de baja</a>
-                <a role="button" class="btn btn-info" href="modifica.html">Modificar</a>
+                <a role="button" class="btn btn-info" href="buscar.html"><span class="mdi mdi-magnify" />
+                    Buscar</a>
+                <a role="button" class="btn btn-info" href="modifica.html"><span class="mdi mdi-pencil">
+                    </span>Modificar</a>
+                <a role="button" class="btn btn-info" href="baja.html"><span class="mdi mdi-delete"> </span>Dar de
+                    baja</a>
+                <button type="button" class="btn btn-1c" onclick="consultarDirecciones()" data-toggle="modal"
+                    data-target="#modal-shipping-info"><span class="mdi mdi-book-search"> </span>Consultar Direcciones
+                    de
+                    envío</button>
             </div>
         </form>
+        <div class="row">
+            <div class="col-md" id="result-shipping-info"></div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modal-shipping-info" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Direcciones de envío</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="modal-shipping-info-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-1c" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -258,6 +297,8 @@
         })();
     </script>
     <script>
+        var alta_obj = null;
+        var success = false;
         $(document).ready(function () {
             $("#personal-info").submit(function (e) {
                 //Stops submit button from refreshing page.
@@ -273,16 +314,30 @@
                     success: function (response) {
                         console.log(JSON.stringify(response));
                         console.log('success');
+                        alta_obj = JSON.parse(JSON.stringify(response));
+                        success = true;
+                        alert("Alta información personal realizada");
+                        actualizaIDs();
+                        console.log(alta_obj.id);
+                        $('#fk_id').val(alta_obj.id).change();
                         consultar();
                     },
                     error: function (response) {
                         console.log(response);
                         console.log('failure');
+                        success = false;
                     }
                 });
             });
             consultar();
-
+            actualizaIDs();
+            $('#shipping-info').submit(function (e) {
+                e.preventDefault();
+                $.post("alta-direccion.php", $('#shipping-info').serialize(), function (data) {
+                    $("#result-shipping-info").html(data);
+                })
+                alert("Alta dirección realizada");
+            })
         });
 
         function consultar() {
@@ -293,6 +348,29 @@
                     $("#consulta").html(data);
                     $('#consulta').slideDown();
                 }
+            })
+        }
+
+        function continuar() {
+
+        }
+
+        function actualizaIDs() {
+            $.get('getids.php', function (data, status) {
+                if (status === "success") {
+                    var ids = JSON.parse(data);
+                    $('#fk_id').html('');
+                    $.each(ids, function (key, value) {
+                        $('#fk_id').append(
+                            $("<option></option>").attr("value", value.id).text(value.name));
+                    });
+                }
+            });
+        }
+
+        function consultarDirecciones() {
+            $.get('consulta_envio.php', function (data) {
+                $("#modal-shipping-info-body").html(data);
             })
         }
     </script>

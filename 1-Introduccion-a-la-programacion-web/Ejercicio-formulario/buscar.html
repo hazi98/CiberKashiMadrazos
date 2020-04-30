@@ -54,8 +54,152 @@
                     con links</a>
             </div>
         </div>
+        <div class="row my-3">
+            <h2><span class="mdi mdi-account-search"> </span>Búsqueda de direcciones</h2>
+        </div>
+        <div class="row py-3">
+            <div class="col-md-3 my-2">
+                <button type="button" class="btn btn-secondary" id="busca-dir1"><span class="mdi mdi-account-key">
+                    </span>
+                    Buscar
+                    por clave</button>
+            </div>
+            <div class="col-md-3 my-2">
+                <button type="button" class="btn btn-secondary" id="busca-dir2"><span class="mdi mdi-account-multiple">
+                    </span>Buscar por campo</button>
+            </div>
+            <div class="col-md-3 my-2">
+                <button type="button" class="btn btn-secondary" id="busca-dir3"><span class="mdi mdi-lock-open">
+                    </span>Buscar con get</button>
+            </div>
+            <div class="col-md-3 my-2">
+                <a role="button" class="btn btn-secondary" href="busca-dir4.php"><span class="mdi mdi-link">
+                    </span>Buscar
+                    con links</a>
+            </div>
+        </div>
+        <div id="direccion-busca1" style="display: none;">
+            <div class="row py-3">
+                <div class="col-md">
+                    <h2>Formulario - Busca por clave </h2>
+                </div>
+            </div>
+            <form action="busca_procesa-dir1.php" method="post" class="form" id="form-busca1">
+                <div class="row">
+                    <div class="form-group col-md">
+                        <label for="clave">Clave de la dirección a Buscar (ID):</label>
+                        <input type="text" name="id" id="clave" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md">
+                        <input type="submit" class="btn btn-primary" value="Busca">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="direccion-busca2" style="display: none;">
+            <div class="row py-3">
+                <div class="col-md">
+                    <h2>Formulario - Busca por campo </h2>
+                </div>
+            </div>
+            <form action="busca_procesa-dir2.php" method="post" class="row form" id="form-busca2">
+                <div class="from-group col-md-5">
+                    <label for="campo">Campo:</label>
+                    <select name="campo" class="form-control" id="campo">
+                        <option value="address">Calle y número</option>
+                        <option value="municipality">Municipio / Alcaldía</option>
+                        <option value="city-state">Ciudad / Estado</option>
+                        <option value="zip-code">Código Postal</option>
+                        <option value="fk_id">ID de la Persona</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="valor">Valor del Campo de Búsqueda:</label>
+                    <input type="text" name="valor" id="valor" class="form-control"><br>
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" class="btn btn-primary" value="Busca">
+                </div>
+            </form>
+        </div>
+        <div id="direccion-busca3" style="display: none;">
+            <div class="row py-3">
+                <div class="col-md">
+                    <h2>Formulario - Busca por get </h2>
+                </div>
+            </div>
+            <form action="busca_procesa-dir3.php" method="get" class="form" id="form-busca3">
+                <div class="row">
+                    <div class="form-group col-md">
+                        <label for="busca">Clave de la dirección a Buscar (ID):</label>
+                        <input type="text" name="id" id="busca" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md">
+                        <input type="submit" class="btn btn-primary" value="Busca">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row" id="resultado-busca">
+
+        </div>
+        <div class="row my-3">
+            <a role="button" class="btn btn-danger" href="formulario.html">Regresar</a>
+        </div>
     </div>
 
 </body>
+
+<script>
+    $(document).ready(function () {
+        var busqueda_activa = null;
+        $("#busca-dir1").click(function () {
+            busqueda_activa = 1;
+            $("#direccion-busca1").slideToggle();
+            $("#direccion-busca2").slideUp();
+            $("#direccion-busca3").slideUp();
+        })
+        $("#busca-dir2").click(function () {
+            busqueda_activa = 2;
+            $("#direccion-busca2").slideToggle();
+            $("#direccion-busca1").slideUp();
+            $("#direccion-busca3").slideUp();
+        })
+        $("#busca-dir3").click(function () {
+            busqueda_activa = 3;
+            $("#direccion-busca3").slideToggle();
+            $("#direccion-busca1").slideUp();
+            $("#direccion-busca2").slideUp();
+        })
+        $("#form-busca1").submit(function (e) {
+            e.preventDefault();
+            $("#resultado-busca").slideUp();
+            $.post("busca_procesa-dir1.php", $(this).serialize(), function (data) {
+                $("#resultado-busca").html(data);
+                $("#resultado-busca").slideDown();
+            })
+        })
+        $("#form-busca2").submit(function (e) {
+            e.preventDefault();
+            $("#resultado-busca").slideUp();
+            $.post("busca_procesa-dir2.php", $(this).serialize(), function (data) {
+                $("#resultado-busca").html(data);
+                $("#resultado-busca").slideDown();
+            })
+        })
+        $("#form-busca3").submit(function (e) {
+            e.preventDefault();
+            $("#resultado-busca").slideUp();
+            $.get("busca_procesa-dir3.php", $(this).serialize(), function (data) {
+                $("#resultado-busca").html(data);
+                $("#resultado-busca").slideDown();
+            })
+        })
+    })
+</script>
 
 </html>

@@ -1,15 +1,71 @@
 <html>
 
-<body>
-    <!--dir_alta_procesa_noseguro.php-->
-    <form action="busca_procesa1.php" method="post">
-        <!--//los valores se muestran en el url de destino.-->
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>Envios.com</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="XML_JSON.js"></script>
 
-        <h1>Directorio - Busca por clave </h1>
-        Clave de la persona a Buscar (id): <input type="text" name="id"><br>
-        <input type="submit" value="Busca">
-    </form>
+</head>
+
+<body>
+    <div class="container p-5">
+        <div id="encabezado" class="row">
+            <div class="encabezado col-md">
+                <img class="mx-3" src="box.svg" alt="logo" width="60px">
+                <h1 class="encabezado-text col"><span>
+                        envios
+                    </span>
+                    <span class="com">.com</span>
+                </h1>
+            </div>
+
+        </div>
+        <div class="row py-3">
+            <h2>Formulario - Busca por clave </h2>
+        </div>
+        <form action="busca_procesa1.php" method="post" class="form" id="form-busca">
+            <div class="row">
+                <div class="form-group col-md">
+                    <label for="clave">Clave de la persona a Buscar (id):</label>
+                    <input type="text" name="id" id="clave" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <input type="submit" class="btn btn-primary" value="Busca">
+                </div>
+            </div>
+        </form>
+        <div class="row" id="resultado-busca">
+
+        </div>
+    </div>
 
 </body>
+
+<script>
+    $(document).ready(function () {
+        $("#form-busca").submit(function (e) {
+            e.preventDefault();
+            $.post("busca_procesa1.php", $(this).serialize(), function (data) {
+                $("#resultado-busca").html(data);
+            })
+        })
+    })
+</script>
 
 </html>

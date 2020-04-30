@@ -37,31 +37,56 @@
             </div>
         </div>
         <div class="row my-3">
-            <h2><span class="mdi mdi-account-edit"> </span>Modificación de datos personales</h2>
+            <h2 id="personal-info-header"><span class="mdi mdi-account-edit"> </span>Modificación de datos personales
+            </h2>
         </div>
         <div class="my-2 row d-flex justify-content-center">
             <div class="spinner-border" id="spinner" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
-            <div id="consulta">
+            <div id="personal-info-query">
 
             </div>
         </div>
         <div class="row my-3">
-            <form action="modifica_busca.php" id="modifica-form" method="post">
-                Clave de la persona a Actualizar (id): <input type="number" name="id" min="0"><br>
+            <form action="modifica_busca.php" id="personal-info-form" method="post">
+                Clave de la persona a Actualizar (id): <input class="form-control" type="number" name="id" min="0"><br>
                 <input type="submit" class="btn btn-primary" value="Buscar">
-                <a role="button" class="btn btn-info" href="formulario.html">Regresar</a>
             </form>
         </div>
         <div class="row my-3" id="modifica-busca">
 
         </div>
+        <div class="row my-3">
+            <h2 id="shipping-info-header"><span class="mdi mdi-account-edit"> </span>Modificación de datos de envío</h2>
+        </div>
+        <div class="my-2 row d-flex justify-content-center">
+            <div class="spinner-border" id="spinner-shipping" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div id="shipping-info-query">
+
+            </div>
+        </div>
+        <div class="row my-3">
+            <form action="modifica_busca_direccion.php" id="shipping-info-form" method="post">
+                Clave de la dirección a Actualizar (id): <input class="form-control" type="number" name="id"
+                    min="0"><br>
+                <input type="submit" class="btn btn-primary" value="Buscar">
+            </form>
+        </div>
+        <div class="row my-3" id="modifica-busca-direccion">
+
+        </div>
+        <div class="row my-3">
+            <a role="button" class="btn btn-danger" href="formulario.html">Regresar</a>
+        </div>
     </div>
     <script>
         $(document).ready(function () {
-            consultar();
-            $('#modifica-form').submit(function (e) {
+            queryPersonalInfo();
+            queryShippingInfo();
+            $('#personal-info-form').submit(function (e) {
                 e.preventDefault();
                 var form_data = new FormData(this);
                 $('#modifica-busca').slideUp();
@@ -82,16 +107,42 @@
                     }
                 });
             })
+            $('#shipping-info-form').submit(function (e) {
+                e.preventDefault();
+                $('#modifica-busca-direccion').hide();
+                $.post('modifica_busca_direccion.php', $(this).serialize(), function (data) {
+                    $('#modifica-busca-direccion').html(data);
+                    $('#modifica-busca-direccion').slideDown();
+                })
+            })
+            $('#personal-info-header').click(function () {
+                $('#personal-info-query').slideToggle();
+                $('#personal-info-form').slideToggle();
+                $('#modifica-busca').slideToggle();
+            });
+            $('#shipping-info-header').click(function () {
+                $('#shipping-info-query').slideToggle();
+                $('#shipping-info-form').slideToggle();
+            })
         });
 
-        function consultar() {
+        function queryPersonalInfo() {
             $.get("consulta.php", function (data, status) {
                 if (status === "success") {
                     $('#spinner').hide();
-                    $('#consulta').hide();
-                    $("#consulta").html(data);
-                    $('#consulta').slideDown();
+                    $('#personal-info-query').hide();
+                    $("#personal-info-query").html(data);
+                    $('#personal-info-query').slideDown();
                 }
+            })
+        }
+
+        function queryShippingInfo() {
+            $.get('consulta_envio.php', function (data) {
+                $('#spinner-shipping').hide();
+                $("#shipping-info-query").hide();
+                $("#shipping-info-query").html(data);
+                $("#shipping-info-query").slideDown();
             })
         }
     </script>

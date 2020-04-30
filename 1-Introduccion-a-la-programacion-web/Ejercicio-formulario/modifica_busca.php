@@ -32,45 +32,53 @@ if($stmt->execute())
 		<h2>Modificar datos</h2>
 		<br>
 		<div class="form-group row my-3">
-			<label for="id" class="col-sm-2 col-form-label">ID</label>
+			<label for="id" class="col-sm-2 col-form-label modifica-label" id="label-id">ID</label>
 			<div class="col-sm-10">
 				<input class="form-control" id="id" type="number" name="id" readonly value="<?php echo $id;?>">
 			</div>
 		</div>
 		<div class="form-group row">
-			<label for="first-name" class="my-2 col-sm-2 col-form-label">Nombre</label>
-			<div class="col-sm-10" id="name">
-				<input class="form-control" type="text" name="first-name" value="<?php echo $firstname;?>">
+			<label for="first-name" class="my-2 col-sm-2 col-form-label modifica-label" id="label-first-name">Nombre</label>
+			<div class="col-sm-10">
+				<input class="form-control" type="text" name="first-name" id="input-first-name" value="<?php echo $firstname;?>">
 			</div>
-			<label for="middle-name" class="my-2 col-sm-2 col-form-label">Apellido Paterno</label>
-			<div class="col-sm-10" id="name">
-				<input class="form-control" type="text" id="middle-name" name="middle-name" value="<?php echo $middlename;?>">
+			<label for="middle-name" class="my-2 col-sm-2 col-form-label modifica-label" id="label-middle-name">Apellido Paterno</label>
+			<div class="col-sm-10" >
+				<input class="form-control" type="text" id="input-middle-name" name="middle-name" value="<?php echo $middlename;?>">
 			</div>
-			<label for="last-name" class="my-2 col-sm-2 col-form-label">Apellido Materno</label>
-			<div class="col-sm-10" id="name">
-				<input class="form-control" type="text" id="last-name" name="last-name" value="<?php echo $lastname;?>">
+			<label for="last-name" class="my-2 col-sm-2 col-form-label modifica-label" id="label-last-name">Apellido Materno</label>
+			<div class="col-sm-10">
+				<input class="form-control" type="text" id="input-last-name" name="last-name" value="<?php echo $lastname;?>">
 			</div>
 		</div>
 		<div class="form-group row">
-			<label for="age" class="col-sm-2 col-form-label">Edad</label>
+			<label for="age" class="col-sm-2 col-form-label modifica-label" id="label-edad">Edad</label>
 			<div class="col-sm-10">
 				<input class="form-control" type="number" id="age" name="age" min="0" value="<?php echo $age;?>">
 			</div>
 		</div>
 		<div class="form-group row">
-			<label for="gender" class="col-sm-2 col-form-label">Género</label>
-			<div class="col-sm-10">
-				<input class="form-control" type="text" id="gender" name="gender" value="<?php echo $gender;?>">
+			<label for="gender" class="col-sm-2 col-form-label modifica-label" id="label-genero">Género</label>
+			<div class="col-sm-10 btn-group btn-group-toggle" data-toggle="buttons">
+				<label class="btn btn-secondary <?php echo ($gender == 'Hombre' ) ? 'active' : '' ;?> ">
+					<input type="radio" name="gender" value="Hombre" <?php echo ($gender == 'Hombre' ) ? 'checked' : '' ;?>>Hombre
+				</label>
+				<label class="btn btn-secondary <?php echo ($gender == 'Mujer' ) ? 'active' : '';?> ">
+					<input type="radio" name="gender" value="Mujer" <?php echo ($gender == 'Mujer' ) ? 'checked' : '';?>> Mujer
+				</label>
+				<label class="btn btn-secondary <?php echo ($gender == 'Otro' ) ? 'active' : '';?> ">
+					<input type="radio" name="gender" value="Otro" <?php echo ($gender == 'Otro' ) ? 'checked' : '';?>> Otro
+				</label>
 			</div>
 		</div>
 		<div class="form-group row">
-			<label for="email" class="col-sm-2 col-form-label">Correo</label>
+			<label for="email" class="col-sm-2 col-form-label modifica-label" id="label-correo">Correo</label>
 			<div class="col-sm-10">
 				<input class="form-control" type="text" id="email" name="email" value="<?php echo $email;?>">
 			</div>
 		</div>
 		<div class="form-group row">
-			<label for="phone-number" class="col-sm-2 col-form-label">Celular</label>
+			<label for="phone-number" class="col-sm-2 col-form-label modifica-label" id="label-celular">Celular</label>
 			<div class="col-sm-10">
 				<input class="form-control" type="text" id="phone-number" name="phone-number" value="<?php echo $phonenumber;?>">
 			</div>

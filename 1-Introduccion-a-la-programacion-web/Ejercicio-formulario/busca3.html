@@ -21,15 +21,50 @@
 </head>
 
 <body>
-    <!--dir_alta_procesa_noseguro.php-->
-    <form action="busca_procesa3.php" method="get">
-        <!--//los valores se muestran en el url de destino.-->
+    <div class="container p-5">
+        <div id="encabezado" class="row">
+            <div class="encabezado col-md">
+                <img class="mx-3" src="box.svg" alt="logo" width="60px">
+                <h1 class="encabezado-text col"><span>
+                        envios
+                    </span>
+                    <span class="com">.com</span>
+                </h1>
+            </div>
 
-        <h1>Directorio - Busca por get</h1>
-        Clave de la persona a Buscar (Id): <input type="text" name="id"><br>
-        <input type="submit" value="Busca">
-    </form>
+        </div>
+        <div class="row py-3">
+            <h2>Formulario - Busca por get </h2>
+        </div>
+        <!--dir_alta_procesa_noseguro.php-->
+        <form action="busca_procesa3.php" method="get" class="form" id="form-busca">
+            <div class="row">
+                <div class="form-group col-md">
+                    <label for="busca">Clave de la persona a Buscar (Id):</label>
+                    <input type="text" name="id" id="busca" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <input type="submit" class="btn btn-primary" value="Busca">
+                </div>
+            </div>
+        </form>
+        <div class="row" id="resultado-busca">
+
+        </div>
 
 </body>
+
+<script>
+    $(document).ready(function () {
+        $("#form-busca").submit(function (e) {
+            e.preventDefault();
+            $.get("busca_procesa3.php", $(this).serialize(), function (data) {
+                $("#resultado-busca").html(data);
+            })
+        })
+    })
+</script>
 
 </html>
